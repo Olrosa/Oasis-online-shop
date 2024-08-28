@@ -26,6 +26,11 @@ a {
     text-decoration: none
 }
 
+.section {
+    padding: 21px 0;
+}
+
 
 @import 'blocks/header';
+@import 'blocks/slider';
 @import 'blocks/hero';

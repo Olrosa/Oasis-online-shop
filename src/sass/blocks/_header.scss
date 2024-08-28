@@ -74,6 +74,7 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        cursor: pointer;
         span {
             color: var(--650, #848589);
             font-feature-settings: 'liga' off, 'clig' off;
