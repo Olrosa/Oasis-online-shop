@@ -1,5 +1,7 @@
+@import 'base/fonts';
 @import 'base/variables';
 @import 'base/mixins';
+@import 'libs/olrosa-lib';
 
 * {
     margin: 0;
@@ -7,6 +9,23 @@
     box-sizing: border-box;
 }
 
- 
+html {
+    font-family: "Inter", sans-serif;
+}
 
+body {
+    background: #F8F8F8;
+}
+
+.wrapper {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none
+}
+
+
+@import 'blocks/header';
 @import 'blocks/hero';
