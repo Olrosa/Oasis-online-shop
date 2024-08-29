@@ -3,6 +3,10 @@
         position: relative;
         height: 203px;
     }
+    &__categories {
+        position: relative;
+        min-height: 198px;
+    }
     &__tune {
         position: relative;
         height: 353px;
@@ -14,6 +18,28 @@
        height: 100%;
        object-fit: cover;
        border-radius: 3px;
+    }
+    &__category {
+        position: relative;
+        padding: 20px;
+        width: 198px;
+        height: 198px;
+        border-radius: 3px;
+        background: var(--200, #EDEEF2);
+        cursor: pointer;
+        &-name {
+            color: #000;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 125%; /* 20px */
+        }
+        &-img {
+            position: absolute;
+            top: 0;
+            left: -20px;
+        }
     }
     &__title {
         color: var(--800, #44474C);
@@ -138,6 +164,7 @@
     border: 1px solid var(--, #EEE7D2);
     background: #FFF;
     cursor: pointer;
+    z-index: 2;
     &-next {
         right: -18px;
     }
