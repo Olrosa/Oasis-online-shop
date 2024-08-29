@@ -34,6 +34,7 @@ a {
 @import 'blocks/header';
 @import 'blocks/slider';
 @import 'blocks/form';
-@import 'blocks/questions';
-@import 'blocks/discounts';
-@import 'blocks/delivery';
+@import 'blocks/main/questions';
+@import 'blocks/main/discounts';
+@import 'blocks/main/delivery';
+@import 'blocks/main/find';

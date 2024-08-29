@@ -1,0 +1,35 @@
+.find {
+    &__table {
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 14%;
+        gap: 25px;
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__name {
+        color: var(--800, #44474C);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 20px */
+    }
+    &__code {
+        color: var(--400, #D1D1D1);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 20px */
+        cursor: pointer;
+    }
+}
