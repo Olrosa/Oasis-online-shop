@@ -1,0 +1,11 @@
+.recommend {
+    &__offer {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 50px;  
+    }
+    &__row {
+        display: flex;
+    }
+}
