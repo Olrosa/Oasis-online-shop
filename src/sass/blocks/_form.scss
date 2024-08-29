@@ -9,6 +9,21 @@
             margin-top: 24px;
         }
     }
+    &__input {
+        padding: 16px;
+        border: none;
+        border-radius: 3px;
+        border: 1px solid var(--300, #E6E7E9);
+        background: var(--0, #FFF);
+        &::placeholder {
+            color: var(--650, #848589);
+            font-family: "Inter", sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px; /* 150% */
+        }
+    }
     &__button {
         height: 40px;
         width: calc(33% - 10px);

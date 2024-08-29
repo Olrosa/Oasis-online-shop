@@ -1,0 +1,88 @@
+.feed {
+    &__offer {
+        display: flex;
+    }
+    &__image {
+        height: 565px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        background-image: url('../../../img/main/beach.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        border: 3px;
+    }
+    &__line {
+        position: absolute;
+        &-1 {
+            top: 20px;
+        }
+        &-2 {
+            top: 60px;
+        }
+        &-3 {
+            top: 100px;
+        }
+        &-4 {
+            bottom: -40px;
+            right: 0;
+        }
+        &-5 {
+            bottom: -70px;
+            right: 0;
+        }
+        &-6 {
+            bottom: -100px;
+            right: 0;
+        }
+        &-7 {
+            bottom: -130px;
+            right: 0;
+        }
+    }
+    &__block {
+        padding: 77px 53px;
+    }
+    &__title {
+        color: var(--1000, #211A00);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 42px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 135%; /* 56.7px */
+    }
+    &__subtitle {
+        margin-top: 24px;
+        color: var(--650, #848589);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 25px */
+    }
+    &__form {
+        margin-top: 58px;
+    }
+    &__fields {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    &__input {
+        width: 60%;
+    }
+    &__button {
+        margin-top: 58px;
+        border: none;
+        padding: 16px 24px;
+        border-radius: 3px;
+        background: var(--100, #F8F8F8);
+        color: var(--400, #D1D1D1);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 20px */
+    }
+}
