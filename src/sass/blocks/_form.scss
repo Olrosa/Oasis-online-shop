@@ -1,0 +1,177 @@
+.form {
+    &__details {
+        width: 83%;
+        padding: 24px;
+        border-radius: 3px;
+        background: #FFF;
+        box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.10);
+        .form__button {
+            margin-top: 24px;
+        }
+    }
+    &__button {
+        height: 40px;
+        width: calc(33% - 10px);
+        border: 1px solid var(--200, #EDEEF2);
+        background: #FFF;
+        border-radius: 3px;
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 17.5px */
+        cursor: pointer;
+        
+        &.disactive {
+            color: var(--200, #EDEEF2);
+            border: 1px solid var(--200, #EDEEF2);
+            cursor: not-allowed; /* Указатель для неактивного состояния */
+            pointer-events: none; /* Отключаем взаимодействие */
+        }
+    }
+    
+    /* Стили для активного состояния */
+    &__button.active {
+        color: #44474C; /* Цвет текста активной кнопки */
+        border: none;
+        background: #EEE7D2;
+        cursor: pointer;
+        pointer-events: auto; /* Включаем взаимодействие */
+    }
+    &__radios {
+        display: flex;
+    }
+    &__radio {
+        flex: 1;
+        position: relative;
+        input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        label {
+            min-width: 110px;
+            display: block;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid var(--400, #D1D1D1);
+            border-left: none;
+            background-color: #fff;
+            color: var(--800, #D1D1D1);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 125%; /* 17.5px */
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        &:first-child label {
+            border-left: 1px solid #D1D1D1;
+            border-radius: 3px 0px 0px 3px;
+        }
+        &:last-child label {
+            border-radius: 0px 3px 3px 0px;
+        }
+        input[type="radio"]:checked + label {
+            background-color: #EEE7D2;
+            color: #44474C;
+        }
+        label:hover {
+            background-color: #f5f5f5;
+        }
+        input[type="radio"]:checked + label:hover {
+            background-color: #f0eac8;
+        }
+    }
+    &__choose {
+        &-text {
+            color: #000;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 125%; /* 17.5px */
+        }
+    }
+    &__selectors {
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    &__selector {
+        position: relative;
+        width: calc(33% - 10px);
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            width: 12px;
+            height: 12px;
+            pointer-events: none;
+            transform: translateY(-50%);
+            background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1.71484 4L6.00056 8L10.2863 4" stroke="%23848589" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+    &__dropdown {
+        width: 100%;
+        height: 40px;
+        padding: 8px 16px;
+        color: var(--650, #848589); /* Цвет по умолчанию, когда ничего не выбрано */
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 125%; /* 17.5px */
+        font-family: "Inter", sans-serif;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
+        border-radius: 3px;
+        border: 1px solid var(--400, #D1D1D1);
+        background: #FFF;
+
+        /* Убираем стандартное outline при фокусе */
+        &:focus {
+            outline: none;
+        }
+
+        /* Цвет текста после выбора */
+        &.has-value {
+            color: #211A00;
+        }
+
+        option {
+            color: #211A00;
+        }
+
+        option:first-child {
+            color: var(--650, #848589);
+        }
+    }   
+    
+}
+
+.form__selector.disactive {
+    /* opacity: 0.5; */
+    pointer-events: none;
+    &::after {
+        background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1.71484 4L6.00056 8L10.2863 4" stroke="%23EDEEF2" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    }
+    .form__dropdown {
+        color: var(--200, #EDEEF2);
+        border: 1px solid var(--200, #EDEEF2);
+        background: #FFF;
+    }
+}
+
+.form__selector.active {
+    opacity: 1;
+    pointer-events: auto;
+}
