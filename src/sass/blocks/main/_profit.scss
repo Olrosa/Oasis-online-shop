@@ -1,0 +1,71 @@
+.profit {
+    &__offer {
+        margin-top: 50px;
+        height: 555px;
+        gap: 25px;
+    }
+    &__block {
+        display: flex;
+        height: 100%;
+        &-1 {
+            gap: 25px;
+            .discounts {
+                &__item {
+                    height: 100%;
+                    &.disactive {
+                        position: relative;
+                        opacity: .5;
+                        filter: grayscale(100%);
+                        pointer-events: none;
+                        overflow: hidden;
+                        &::before, &::after {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 150%; /* Увеличиваем ширину, чтобы покрыть диагональ */
+                            height: 2px;
+                            background-color: rgba(0, 0, 0, 0.3); /* Цвет линии */
+                            transform: translate(-50%, -50%) rotate(-45deg); /* Первая диагональная линия */
+                        }
+                        &::after {
+                            transform: translate(-50%, -50%) rotate(45deg); 
+                        }
+                    }
+                }
+                &__img {
+                    height: 222px;
+                }
+            }
+        }
+        &-2 {
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 53px 18px;
+            width: 100%;
+            background-image: url('../../../img/main/why.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 3px;
+        }
+    }
+    &__title {
+        color: var(--800, #44474C);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 116%; /* 37.12px */
+    }
+    &__subtitle {
+        width: 80%;
+        margin-top: 18px;
+        color: var(--650, #848589);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 20px */
+    }
+}
