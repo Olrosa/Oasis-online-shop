@@ -11,6 +11,7 @@ document.querySelector('.form__dropdown').addEventListener('change', function() 
 // Selectors
 
 const selectors = document.querySelectorAll('.form__selector');
+const button = document.querySelector('.form__button');
 
 selectors.forEach((selector, index) => {
     const selectElement = selector.querySelector('select');
@@ -25,6 +26,27 @@ selectors.forEach((selector, index) => {
                 nextSelector.classList.add('active');
                 nextSelector.querySelector('select').disabled = false;
             }
+
+            // Проверяем, заполнены ли все селекторы
+            checkAllSelectorsFilled();
         }
     });
 });
+
+// Функция для проверки, заполнены ли все селекторы
+function checkAllSelectorsFilled() {
+    const allFilled = Array.from(selectors).every(selector => {
+        const selectElement = selector.querySelector('select');
+        return selectElement.value;
+    });
+
+    if (allFilled) {
+        button.classList.remove('disactive');
+        button.classList.add('active');
+        button.disabled = false;
+    } else {
+        button.classList.add('disactive');
+        button.classList.remove('active');
+        button.disabled = true;
+    }
+}
