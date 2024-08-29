@@ -1,0 +1,76 @@
+.footer {
+    padding: 110px 0;
+    background:#EEE7D2;
+    &__offer {
+        display: flex;
+    }
+    &__column {
+        
+    }
+    &__about {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    &__logo {
+        color: var(--1000, #211A00);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-family: Lufga;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 27.5px */
+        letter-spacing: 0.5px;
+    }
+    &__link {
+        color: var(--1000, #44474C);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 20px */
+    }
+    &__title {
+        color: var(--1000, #211A00);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 25px */
+    }
+    &__socials {
+        display: flex;
+        gap: 13px;
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 27px;
+            height: 27px;
+            padding: 4px;
+            border-radius: 3px;
+            border: 1px solid var(--650, #848589);
+        }
+    }
+    &__social {
+        &-img {
+            
+        }
+        &-block {
+            margin-top: 125px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+    &__nav {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    &__columns {
+        display: flex;
+        gap: 82px;
+    }
+}
