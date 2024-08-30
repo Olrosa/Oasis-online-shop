@@ -84,5 +84,12 @@
         font-style: normal;
         font-weight: 600;
         line-height: 125%; /* 20px */
+        &.active {
+            color: #44474C; /* Цвет текста активной кнопки */
+            border: none;
+            background: #EEE7D2;
+            cursor: pointer;
+            pointer-events: auto; /* Включаем взаимодействие */
+        }
     }
 }

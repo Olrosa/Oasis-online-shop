@@ -1,9 +1,11 @@
 .slider {
+    position: relative;
     &__main {
         position: relative;
         height: 203px;
     }
     &__categories {
+        
         position: relative;
         min-height: 198px;
     }
@@ -170,7 +172,7 @@
     transform: translateY(-50%);
     padding: 8px;
     border-radius: 3px;
-    border: 1px solid var(--, #EEE7D2);
+    border: 1px solid var(--, #EEE7D2) !important;
     background: #FFF;
     cursor: pointer;
     z-index: 2;
@@ -180,4 +182,13 @@
     &-prev {
         left: -18px;
     }
+    width: auto !important;
+    margin-top: auto !important;
+    &::after, &::before {
+        display: none;
+    }
+}
+
+.swiper {
+    
 }
