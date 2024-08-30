@@ -119,7 +119,7 @@
     &__selector {
         position: relative;
         width: calc(33% - 10px);
-        &::after {
+        /* &::after {
             content: "";
             position: absolute;
             top: 50%;
@@ -131,7 +131,7 @@
             background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1.71484 4L6.00056 8L10.2863 4" stroke="%23848589" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/></svg>');
             background-size: contain;
             background-repeat: no-repeat;
-        }
+        } */
     }
     &__dropdown {
         width: 100%;
@@ -163,14 +163,22 @@
         }
 
         option {
-            color: #211A00;
+            padding: 20px;
+            color: var(--650, #848589);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 125%; /* 17.5px */
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
         }
 
         option:first-child {
             color: var(--650, #848589);
         }
     }   
-    
 }
 
 .form__selector.disactive {
@@ -179,14 +187,117 @@
     &::after {
         background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1.71484 4L6.00056 8L10.2863 4" stroke="%23EDEEF2" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/></svg>');
     }
-    .form__dropdown {
+    .form__dropdown, .select-selected {
         color: var(--200, #EDEEF2);
         border: 1px solid var(--200, #EDEEF2);
         background: #FFF;
     }
+    .select-selected::after {
+        background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1.71484 4L6.00056 8L10.2863 4" stroke="%23EDEEF2" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    }
+    
 }
 
 .form__selector.active {
     opacity: 1;
     pointer-events: auto;
+   
+}
+
+.custom-select {
+    height: 100%;
+    position: relative;
+    font-family: "Inter", sans-serif;
+}
+
+.select-selected {
+    background-color: #fff;
+    border: 1px solid var(--400, #D1D1D1);
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--650, #848589);
+    line-height: 125%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-selected::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 12px;
+    height: 12px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1.71484 4L6.00056 8L10.2863 4" stroke="%23848589" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.select-items {
+    position: absolute;
+    background-color: #fff;
+    top: 85%;
+    left: 0;
+    right: 0;
+    border: 1px solid var(--400, #D1D1D1);
+    border-radius: 0 0 3px 3px;
+    border-top: none;
+    z-index: 99;
+    display: none;
+}
+
+.select-items div {
+    padding: 10px 16px;
+    cursor: pointer;
+    color: var(--650, #848589);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 125%;
+    position: relative;
+}
+
+.select-items div:hover, .same-as-selected {
+    background-color: #f1f1f1;
+}
+
+.select-hide {
+    display: none;
+}
+
+.select-arrow-active::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.select-items div::before {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="%23848589" stroke-width="2"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.same-as-selected::before {
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="%23007BFF" stroke-width="2"/><circle cx="6" cy="6" r="3" fill="%23007BFF"/></svg>');
+}
+
+.select-selected.active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+}
+
+
+.select-items div.same-as-selected::before {
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="%23007BFF" stroke-width="2"/><circle cx="6" cy="6" r="3" fill="%23007BFF"/></svg>');
 }
