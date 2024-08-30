@@ -43,29 +43,54 @@
         height: 100%;
         border-radius: 2px;
         border: 2px solid #44474C;
+        position: relative; /* Важно для позиционирования выпадающего меню */
+
         &-btn {
             border: none;
             width: 10%;
             background-color: #44474C;
             cursor: pointer;
         }
+
         &-input {
             padding: 12px 16px;
             border: none;
-            width: 100%;
+            width: 90%; /* Адаптация ширины */
             background: #FFF;
+
             &::placeholder {
                 color: var(--650, #848589);
                 font-feature-settings: 'liga' off, 'clig' off;
-                /* Заголовок H7 */
                 font-family: "Inter", sans-serif;
                 font-size: 14px;
-                font-style: normal;
                 font-weight: 500;
                 line-height: 125%; /* 17.5px */
             }
+
             &:focus {
                 outline: none;
+            }
+        }
+
+        .dropdown-content {
+            display: none; /* Скрыто по умолчанию */
+            position: absolute;
+            top: 130%; /* Позиционирование под строкой поиска */
+            left: 0;
+            background-color: #FFF;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            width: 100%; /* Ширина dropdown соответствует ширине строки поиска */
+
+            a {
+                color: #211A00;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+
+                &:hover {
+                    background-color: #F8F8F8;
+                }
             }
         }
     }

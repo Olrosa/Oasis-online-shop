@@ -45,13 +45,20 @@
                         Каталог
                     </button>
                     <div class="header__search">
-                        <input type="text" class="header__search-input" placeholder="Все для вашего автомобиля">
+                        <input type="text" class="header__search-input" placeholder="Все для вашего автомобиля" id="searchInput">
                         <button class="header__search-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22" fill="none">
                                 <path d="M10.9564 17.4167C15.0065 17.4167 18.2897 14.1334 18.2897 10.0833C18.2897 6.03325 15.0065 2.75 10.9564 2.75C6.90629 2.75 3.62305 6.03325 3.62305 10.0833C3.62305 14.1334 6.90629 17.4167 10.9564 17.4167Z" stroke="white" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M20.1223 19.2492L16.1348 15.2617" stroke="white" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </button>
+                        <div class="dropdown-content" id="dropdownContent">
+                            <a href="#">Город</a>
+                            <a href="#">Город</a>
+                            <a href="#">Город</a>
+                            <a href="#">Город</a>
+                            <a href="#">Город</a>
+                        </div>
                     </div>
                     <a href="#" class="header__item">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -321,7 +328,7 @@
                             и мы Вам перезвоним
                         </p>
                     </div>
-                    <button class="questions__button">Оставить заявку</button>
+                    <a href="#bid" class="questions__button">Оставить заявку</a>
                 </div>
             </div>
         </div>
@@ -1933,7 +1940,7 @@
             </div>
         </div>
     </section>
-    <section class="section feed">
+    <section class="section feed" id="bid">
         <div class="feed__offer">
             <div class="flex-4 feed__image">
                 <svg class="feed__line feed__line-1" xmlns="http://www.w3.org/2000/svg" width="327" height="198" viewBox="0 0 327 198" fill="none">

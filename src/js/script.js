@@ -1,4 +1,4 @@
-// Dropdown
+// Selectors
 
 document.querySelector('.form__dropdown').addEventListener('change', function() {
     if (this.value) {
@@ -7,8 +7,6 @@ document.querySelector('.form__dropdown').addEventListener('change', function() 
         this.classList.remove('has-value');
     }
 });
-
-// Selectors
 
 // Функция для проверки заполненности всех селекторов и последовательной активации
 function checkAndActivateSelectors() {
@@ -130,3 +128,29 @@ document.addEventListener('click', function(e) {
 
 // Устанавливаем начальное состояние селекторов
 checkAndActivateSelectors();
+
+
+// Search
+
+const searchInput = document.getElementById('searchInput');
+const dropdownContent = document.getElementById('dropdownContent');
+
+searchInput.addEventListener('input', function() {
+    if (this.value.length > 0) {
+        dropdownContent.style.display = 'block';
+    } else {
+        dropdownContent.style.display = 'none';
+    }
+});
+
+searchInput.addEventListener('focus', function() {
+    if (this.value.length > 0) {
+        dropdownContent.style.display = 'block';
+    }
+});
+
+document.addEventListener('click', function(event) {
+    if (!searchInput.contains(event.target) && !dropdownContent.contains(event.target)) {
+        dropdownContent.style.display = 'none';
+    }
+});

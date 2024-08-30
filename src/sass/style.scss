@@ -11,6 +11,8 @@
 
 html {
     font-family: "Inter", sans-serif;
+    color: #5A5A5A;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -27,7 +29,7 @@ a {
 }
 
 .section {
-    padding: 40px 0;
+    padding: 41px 0;
 }
 
 @import 'blocks/title';

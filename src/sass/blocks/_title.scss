@@ -1,3 +1,12 @@
+.h1 {
+    color: var(--Neutral-800, #070707);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 116%; /* 64.96px */
+}
+
 .h2 {
     color: #000;
     font-feature-settings: 'liga' off, 'clig' off;
@@ -5,4 +14,49 @@
     font-style: normal;
     font-weight: 600;
     line-height: 125%; /* 30px */
+}
+
+.h3 {
+    color: var(--Neutral-800, #070707);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 116%; /* 37.12px */
+}
+
+.h4 {
+    color: var(--Neutral-800, #070707);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%; /* 30px */
+}
+
+.h5 {
+    color: var(--Neutral-800, #070707);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%; /* 20px */
+}
+
+.h6 {
+    color: var(--Neutral-800, #070707);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 125%; /* 17.5px */
+}
+
+.p {
+    color: var(--Neutral-600, #5A5A5A);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 135%; /* 21.6px */
 }
