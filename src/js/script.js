@@ -283,28 +283,93 @@ document.addEventListener('DOMContentLoaded', function() {
             },
         },
     });
+
+    // Form active
+
+    const nameInput = document.getElementById('feedName');
+    const phoneInput = document.getElementById('feedPhone');
+    const submitButton = document.getElementById('feedButton');
+
+    function checkInputs() {
+        // Проверяем, заполнены ли оба инпута
+        if (nameInput.value.trim() !== '' && phoneInput.value.trim() !== '') {
+            submitButton.classList.remove('disactive');
+            submitButton.classList.add('active');
+            submitButton.disabled = false;
+        } else {
+            submitButton.classList.remove('active');
+            submitButton.classList.add('disactive');
+            submitButton.disabled = true;
+        }
+    }
+
+    // Добавляем события на ввод данных в инпуты
+    nameInput.addEventListener('input', checkInputs);
+    phoneInput.addEventListener('input', checkInputs);
+
+
+    // OVERLAY | POOP UP's
+
+    // Открытие модального окна
+    document.querySelectorAll('.open-modal').forEach(function (modalTrigger) {
+        modalTrigger.addEventListener('click', function () {
+            const modalName = this.getAttribute('data-modal');
+            const overlay = document.querySelector(`.overlay[data-modal="${modalName}"]`);
+            if (overlay) {
+                overlay.classList.add('active');
+                document.body.classList.add('no-scroll');
+            }
+        });
+    });
+
+    // Закрытие модального окна по нажатию на Esc
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            closeAllModals();
+        }
+    });
+
+    // Закрытие модальных окон по клику на элементы с классом close-modal
+    document.querySelectorAll('.close-modal').forEach(function (closeTrigger) {
+        closeTrigger.addEventListener('click', function () {
+            closeAllModals();
+        });
+    });
+
+    // Закрытие модального окна по клику на overlay
+    document.querySelectorAll('.overlay').forEach(function (overlay) {
+        overlay.addEventListener('click', function (event) {
+            // Проверяем, был ли клик на самом overlay, а не на его содержимом
+            if (event.target === overlay) {
+                closeAllModals();
+            }
+        });
+    });
+
+    // Функция закрытия всех модальных окон
+    function closeAllModals() {
+        document.querySelectorAll('.overlay.active').forEach(function (overlay) {
+            overlay.classList.remove('active');
+        });
+        document.body.classList.remove('no-scroll');
+    }
+
+    // Cities
+
+    document.querySelectorAll('.header__block').forEach(function(block) {
+        block.addEventListener('click', function(event) {
+            // Проверяем, что клик был на элементе с классом header__subtitle
+            if (event.target.classList.contains('header__subtitle')) {
+                // Удаляем класс active у всех заголовков внутри текущего блока
+                block.querySelectorAll('.header__subtitle').forEach(function(subtitle) {
+                    subtitle.classList.remove('active');
+                });
+                // Добавляем класс active на кликнутый заголовок
+                event.target.classList.add('active');
+            }
+        });
+    });
+
 });
 
 
-// Form active
-
-const nameInput = document.getElementById('feedName');
-const phoneInput = document.getElementById('feedPhone');
-const submitButton = document.getElementById('feedButton');
-
-function checkInputs() {
-    // Проверяем, заполнены ли оба инпута
-    if (nameInput.value.trim() !== '' && phoneInput.value.trim() !== '') {
-        submitButton.classList.remove('disactive');
-        submitButton.classList.add('active');
-        submitButton.disabled = false;
-    } else {
-        submitButton.classList.remove('active');
-        submitButton.classList.add('disactive');
-        submitButton.disabled = true;
-    }
-}
-
-// Добавляем события на ввод данных в инпуты
-nameInput.addEventListener('input', checkInputs);
-phoneInput.addEventListener('input', checkInputs);

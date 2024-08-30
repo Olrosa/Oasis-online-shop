@@ -18,6 +18,9 @@ html {
 
 body {
     background: #F8F8F8;
+    &.no-scroll {
+        overflow: hidden;
+    }
 }
 
 .wrapper {
@@ -38,6 +41,7 @@ a {
 @import 'blocks/slider';
 @import 'blocks/form';
 @import 'blocks/footer';
+@import 'blocks/pop';
 
 @import 'blocks/main/questions';
 @import 'blocks/main/discounts';
