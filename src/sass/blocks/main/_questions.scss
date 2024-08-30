@@ -2,11 +2,11 @@
     padding: 24px 16px;
     width: 15%;
     border-radius: 3px;
-    background-image: url('../../img/main/questions.webp');
+    background-image: url('../img/main/questions.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #FFF;
-    background-position: center;
+    background-position: center; 
     &__title {
         color: var(--800, #44474C);
         font-feature-settings: 'liga' off, 'clig' off;
@@ -28,7 +28,7 @@
         border: none;
         padding: 12px 16px;
         border-radius: 3px;
-        background: var(--, #EEE7D2);
+        background: #EEE7D2;
         color: var(--800, #44474C);
         font-feature-settings: 'liga' off, 'clig' off;
         font-size: 16px;
