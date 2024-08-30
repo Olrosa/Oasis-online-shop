@@ -373,113 +373,131 @@ document.addEventListener('DOMContentLoaded', function() {
     // Catalog Bar
 
     // Получаем все колонки и элементы для заполнения
-    const columns = document.querySelectorAll('.overlay-catalog-col');
-    const breadcrumbItems = [
-        document.getElementById('catalogBar1'),
-        document.getElementById('catalogBar2'),
-        document.getElementById('catalogBar3'),
-        document.getElementById('catalogBar4')
-    ];
-    const breadcrumbSvgs = [
-        document.getElementById('catalogBarSvg1'),
-        document.getElementById('catalogBarSvg2'),
-        document.getElementById('catalogBarSvg3')
-    ];
+const columns = document.querySelectorAll('.overlay-catalog-col');
+const breadcrumbItems = [
+    document.getElementById('catalogBar1'),
+    document.getElementById('catalogBar2'),
+    document.getElementById('catalogBar3'),
+    document.getElementById('catalogBar4')
+];
+const breadcrumbSvgs = [
+    document.getElementById('catalogBarSvg1'),
+    document.getElementById('catalogBarSvg2'),
+    document.getElementById('catalogBarSvg3')
+];
 
-    // Функция для инициализации состояния хлебных крошек
-    function initializeBreadcrumbs() {
-        // Устанавливаем начальное состояние хлебных крошек
-        const firstColumnActiveItem = columns[0].querySelector('.overlay-catalog-item.active');
-        if (firstColumnActiveItem) {
-            breadcrumbItems[0].textContent = firstColumnActiveItem.querySelector('.overlay-catalog-title').textContent.trim();
-        } else {
-            breadcrumbItems[0].textContent = 'Каталог'; // Можно оставить "Каталог" если активного элемента нет
-        }
-
-        // Скрываем все хлебные крошки и SVG изначально
-        breadcrumbItems.forEach(item => item.style.display = 'none');
-        breadcrumbSvgs.forEach(svg => svg.style.display = 'none');
+// Функция для инициализации состояния хлебных крошек
+function initializeBreadcrumbs() {
+    // Устанавливаем начальное состояние хлебных крошек
+    const firstColumnActiveItem = columns[0].querySelector('.overlay-catalog-item.active');
+    if (firstColumnActiveItem) {
+        breadcrumbItems[0].textContent = firstColumnActiveItem.querySelector('.overlay-catalog-title').textContent.trim();
+    } else {
+        breadcrumbItems[0].textContent = 'Каталог'; // Можно оставить "Каталог" если активного элемента нет
     }
 
-    // Функция для обновления хлебных крошек
-    function updateBreadcrumbs() {
-        columns.forEach((col, index) => {
-            const activeItem = col.querySelector('.overlay-catalog-item.active');
-            const breadcrumbItem = breadcrumbItems[index];
-            const breadcrumbSvg = breadcrumbSvgs[index - 1]; // SVG-элементы имеют индекс на единицу меньше
+    // Скрываем все хлебные крошки и SVG изначально
+    breadcrumbItems.forEach(item => item.style.display = 'none');
+    breadcrumbSvgs.forEach(svg => svg.style.display = 'none');
+    
+    // Устанавливаем первую колонку как активную
+    columns[0].classList.add('active');
+}
 
-            if (activeItem) {
-                breadcrumbItem.textContent = activeItem.querySelector('.overlay-catalog-title').textContent.trim();
-                breadcrumbItem.style.display = 'inline'; // Показываем текст
-                if (breadcrumbSvg) {
-                    breadcrumbSvg.style.display = 'inline'; // Показываем SVG
-                }
-            } else {
-                breadcrumbItem.textContent = '';
-                breadcrumbItem.style.display = 'none'; // Скрываем текст
-                if (breadcrumbSvg) {
-                    breadcrumbSvg.style.display = 'none'; // Скрываем SVG
-                }
+// Функция для обновления хлебных крошек и активного состояния колонок
+function updateBreadcrumbs() {
+    columns.forEach((col, index) => {
+        const activeItem = col.querySelector('.overlay-catalog-item.active');
+        const breadcrumbItem = breadcrumbItems[index];
+        const breadcrumbSvg = breadcrumbSvgs[index - 1]; // SVG-элементы имеют индекс на единицу меньше
+
+        // Определяем, можно ли сделать колонку активной
+        const canBeActive = index === 0 || columns[index - 1].querySelector('.overlay-catalog-item.active');
+        
+        if (canBeActive) {
+            col.classList.add('active'); // Добавляем класс active к колонке, если она может быть активной
+        } else {
+            col.classList.remove('active'); // Убираем класс active, если она не может быть активной
+        }
+
+        if (activeItem) {
+            breadcrumbItem.textContent = activeItem.querySelector('.overlay-catalog-title').textContent.trim();
+            breadcrumbItem.style.display = 'inline'; // Показываем текст
+            if (breadcrumbSvg) {
+                breadcrumbSvg.style.display = 'inline'; // Показываем SVG
+            }
+        } else {
+            breadcrumbItem.textContent = '';
+            breadcrumbItem.style.display = 'none'; // Скрываем текст
+            if (breadcrumbSvg) {
+                breadcrumbSvg.style.display = 'none'; // Скрываем SVG
+            }
+        }
+    });
+}
+
+// Основной код для обработки кликов на элементах
+columns.forEach((col, colIndex) => {
+    // Получаем все элементы внутри колонки
+    const items = col.querySelectorAll('.overlay-catalog-item');
+
+    items.forEach((item) => {
+        item.addEventListener('click', () => {
+            // Условие для первой колонки: всегда можно выбирать
+            if (colIndex === 0 || columns[colIndex - 1].querySelector('.overlay-catalog-item.active')) {
+                // Удаляем класс active у всех элементов в текущей колонке
+                items.forEach((el) => el.classList.remove('active'));
+                // Добавляем класс active к текущему элементу
+                item.classList.add('active');
+
+                // Убираем класс active и добавляем класс choosed к текущей колонке
+                col.classList.remove('active');
+                col.classList.add('choosed');
+
+                // Обновляем хлебные крошки после выбора
+                updateBreadcrumbs();
             }
         });
-    }
-
-    // Основной код для обработки кликов на элементах
-    columns.forEach((col, colIndex) => {
-        // Получаем все элементы внутри колонки
-        const items = col.querySelectorAll('.overlay-catalog-item');
-
-        items.forEach((item) => {
-            item.addEventListener('click', () => {
-                // Условие для первой колонки: всегда можно выбирать
-                if (colIndex === 0 || columns[colIndex - 1].querySelector('.overlay-catalog-item.active')) {
-                    // Удаляем класс active у всех элементов в текущей колонке
-                    items.forEach((el) => el.classList.remove('active'));
-                    // Добавляем класс active к текущему элементу
-                    item.classList.add('active');
-
-                    // Обновляем хлебные крошки после выбора
-                    updateBreadcrumbs();
-                }
-            });
-        });
     });
+});
 
-    // Инициализация хлебных крошек при загрузке страницы
-    document.addEventListener('DOMContentLoaded', initializeBreadcrumbs);
+// Инициализация хлебных крошек при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+    initializeBreadcrumbs();
+    updateBreadcrumbs(); // Добавляем вызов updateBreadcrumbs для правильного начального состояния
+});
 
-    // Иконка кнопки
+// Иконка кнопки
 
-    // Получаем все элементы, которые нам нужны
-    const catalogOverlay = document.querySelector('.overlay[data-modal="catalog"]');
-    const catalogButton = document.querySelector('button.header__catalog-btn img');
+// Получаем все элементы, которые нам нужны
+const catalogOverlay = document.querySelector('.overlay[data-modal="catalog"]');
+const catalogButton = document.querySelector('button.header__catalog-btn img');
 
-    // Функция для обновления изображения кнопки
-    function updateCatalogButtonImage() {
-        if (catalogOverlay.classList.contains('active')) {
-            // Если каталог активен, меняем изображение на закрытое
-            catalogButton.src = 'icons/burger_close.svg';
-        } else {
-            // Если каталог неактивен, меняем изображение на открытое
-            catalogButton.src = 'icons/burger_open.svg';
-        }
+// Функция для обновления изображения кнопки
+function updateCatalogButtonImage() {
+    if (catalogOverlay.classList.contains('active')) {
+        // Если каталог активен, меняем изображение на закрытое
+        catalogButton.src = 'icons/burger_close.svg';
+    } else {
+        // Если каталог неактивен, меняем изображение на открытое
+        catalogButton.src = 'icons/burger_open.svg';
     }
+}
 
-    // Обработчик события изменения класса у каталога
-    function handleCatalogOverlayChange() {
-        // Проверяем наличие класса active
-        updateCatalogButtonImage();
-    }
+// Обработчик события изменения класса у каталога
+function handleCatalogOverlayChange() {
+    // Проверяем наличие класса active
+    updateCatalogButtonImage();
+}
 
-    // Отслеживаем изменения класса у каталога с помощью MutationObserver
-    const observer = new MutationObserver(handleCatalogOverlayChange);
+// Отслеживаем изменения класса у каталога с помощью MutationObserver
+const observer = new MutationObserver(handleCatalogOverlayChange);
 
-    // Наблюдаем за изменениями классов у элемента каталога
-    observer.observe(catalogOverlay, { attributes: true, attributeFilter: ['class'] });
+// Наблюдаем за изменениями классов у элемента каталога
+observer.observe(catalogOverlay, { attributes: true, attributeFilter: ['class'] });
 
-    // Обновляем изображение кнопки при первоначальной загрузке
-    document.addEventListener('DOMContentLoaded', updateCatalogButtonImage);
-
+// Обновляем изображение кнопки при первоначальной загрузке
+document.addEventListener('DOMContentLoaded', updateCatalogButtonImage);
 
 });
 

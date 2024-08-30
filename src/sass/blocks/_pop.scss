@@ -29,6 +29,16 @@
             flex-direction: column;
             gap: 10px;
             flex: 1;
+            &.active {
+                .overlay-catalog-title {
+                    color: #211A00;
+                }
+            }
+            &.choosed {
+                .overlay-catalog-title {
+                    color: var(--650, #848589);
+                }
+            }
         }
         &-img {
             width: 42px;
