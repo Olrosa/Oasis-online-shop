@@ -21,6 +21,9 @@
             line-height: 125%; /* 20px */
         }
     }
+    &__full-descr {
+        display: none;
+    }
     &__content {
         width: 75%;
         .form__selector {
@@ -34,7 +37,31 @@
             flex-wrap: wrap;
             gap: 13px;
         }
+        .discounts__full-descr {
+            display: none;
+        }
         .discounts__item {
+            &.full {
+                width: 100%;
+                .discounts__full-descr {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 14px;
+                }
+                .discounts__title {
+                    display: none;
+                }
+                .discounts__item-offer {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .discounts__img {
+                    width: 210px;
+                }
+                .discounts__w70 {
+                    width: 70%;
+                }
+            }
             width: calc(25% - 13px);
             flex: none;
         }
