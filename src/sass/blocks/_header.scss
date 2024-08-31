@@ -136,7 +136,11 @@
         font-style: normal;
         font-weight: 500;
         line-height: 125%; /* 17.5px */
+        transition: .2s all;
         &.active {
+            color: var(--800, #44474C);
+        }
+        &:hover {
             color: var(--800, #44474C);
         }
     }
