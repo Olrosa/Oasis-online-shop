@@ -554,7 +554,7 @@ checkAndActivateSelectors();
     columns.forEach((col, colIndex) => {
         // Получаем все элементы внутри колонки
         const items = col.querySelectorAll('.overlay-catalog-item');
-
+    
         items.forEach((item) => {
             item.addEventListener('click', () => {
                 // Условие для первой колонки: всегда можно выбирать
@@ -563,13 +563,19 @@ checkAndActivateSelectors();
                     items.forEach((el) => el.classList.remove('active'));
                     // Добавляем класс active к текущему элементу
                     item.classList.add('active');
-
+    
                     // Убираем класс active и добавляем класс choosed к текущей колонке
                     col.classList.remove('active');
                     col.classList.add('choosed');
-
+    
                     // Обновляем хлебные крошки после выбора
                     updateBreadcrumbs();
+    
+                    // Проверяем, является ли текущая колонка последней
+                    if (colIndex === columns.length - 1) {
+                        // Переход на страницу catalog.html
+                        window.location.href = '/catalog.html';
+                    }
                 }
             });
         });
