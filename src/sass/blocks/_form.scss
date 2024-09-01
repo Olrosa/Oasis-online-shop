@@ -329,3 +329,35 @@
     background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="%23007BFF" stroke-width="2"/><circle cx="6" cy="6" r="3" fill="%23007BFF"/></svg>');
 }
 
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    appearance: none;
+    background-color: #fff;
+    border: 2px solid #44474C;
+    border-radius: 4px;
+    position: relative;
+
+    &:checked::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 15px;
+        height: 15px;
+        background-color: #44474C; /* Цвет заливки */
+        border-radius: 2px;
+    }
+
+    &:checked::after {
+        content: '✔'; /* Символ галочки */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -55%);
+        font-size: 10px;
+        color: white; /* Цвет галочки */
+    }
+}
