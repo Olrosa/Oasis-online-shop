@@ -733,6 +733,23 @@ checkAndActivateSelectors();
         });
         
 
+        // Nav-links
+
+        const navLinks = document.querySelectorAll('.text__nav-subtitle');
+
+        if (navLinks) {
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    // Удаляем класс 'active' у всех ссылок
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    
+                    // Добавляем класс 'active' к текущей нажатой ссылке
+                    this.classList.add('active');
+                });
+            });
+        }
+        
+
 
 });
 

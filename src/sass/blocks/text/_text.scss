@@ -1,0 +1,97 @@
+.text {
+    &__offer {
+        display: flex;
+        gap: 20px;
+    }
+    &__nav {
+        position: sticky;
+        top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        padding: 28px 24px;
+        width: 25%;
+        border-radius: 3px;
+        border: 1px solid var(--200, #EDEEF2);
+        background: var(--0, #FFF);
+        box-shadow: 0px 4px 42px 0px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        align-self: flex-start;
+        &-title {
+            color: var(--1000, #211A00);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 125%; /* 20px */
+        }
+        &-subtitle {
+            position: relative;
+            color: #0D61AF;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 125%; /* 17.5px */
+            cursor: pointer;
+            &.active {
+                color: #44474C;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: -70%;
+                    left: -24px;
+                    width: 4px;
+                    height: 46px;
+                    flex-shrink: 0;
+                    border-radius: 0px 3px 3px 0px;
+                    background: var(--800, #44474C);
+                }
+            }
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 52px;
+        padding: 24px;
+        width: 75%;
+        border-radius: 3px;
+        border: 1px solid var(--200, #EDEEF2);
+        background: var(--0, #FFF);
+        box-shadow: 0px 4px 42px 0px rgba(0, 0, 0, 0.05);
+        &-title {
+            color: var(--1000, #211A00);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 125%; /* 30px */
+        }
+        &-descr {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding-left: 18px;
+            color: var(--800, #44474C);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 21px */
+            ul, ol {
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+                list-style-type: none;
+                margin-left: 14px;
+               
+            }
+        }
+        &-block {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+    }
+}
