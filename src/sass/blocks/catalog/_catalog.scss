@@ -37,7 +37,7 @@
             flex-wrap: wrap;
             gap: 13px;
         }
-        .discounts__full-descr {
+        .discounts__full-descr, .discounts__full-descr .discounts__title {
             display: none;
         }
         .discounts__item {
@@ -59,8 +59,71 @@
                     width: 210px;
                 }
                 .discounts__w70 {
-                    width: 70%;
+                    width: 80%;
                 }
+                .discounts__full-attribute {
+                    color: var(--400, #D1D1D1);
+                    font-feature-settings: 'liga' off, 'clig' off;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 125%; /* 15px */
+                }
+                .discounts__full-value {
+                    color: var(--800, #44474C);
+                    font-feature-settings: 'liga' off, 'clig' off;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 125%;
+                }
+                .discounts__discount {
+                    position: absolute;
+                    top: 34px;
+                    left: 34px;
+                }
+                .discounts__like {
+                    top: 18px;
+                    right: 18px;
+                    path {
+                        stroke:#44474C;
+                    }
+                    &:hover {
+                        path {
+                            fill: #44474C;
+                        }
+                    }
+                    &.active {
+                        path {
+                            stroke:#44474C;
+                            fill:#44474C;
+                        }
+                    }
+                }
+                .discounts__full {
+                    &-title {
+                        color: var(--800, #44474C);
+                        font-feature-settings: 'liga' off, 'clig' off;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 125%; /* 20px */
+                    }
+                    &-descr {
+                        color: var(--650, #848589);
+                        font-feature-settings: 'liga' off, 'clig' off;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 125%; /* 17.5px */
+                    }
+                    &-attributes {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+                }
+                
             }
             width: calc(25% - 13px);
             flex: none;
@@ -86,6 +149,15 @@
     }
     &__size {
         cursor: pointer;
+        transition: .2s stroke;
+        path {
+            stroke: #D1D1D1;
+        }
+        &.active {
+            path {
+                stroke: #211A00;
+            } 
+        }
     }
     &__pages {
         margin-top: 50px;

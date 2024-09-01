@@ -118,8 +118,14 @@ function updateSelected(select, value, content) {
     const selected = select.querySelector('.select-selected');
     const items = select.querySelector('.select-items');
 
-    // Обновляем текст выбранного элемента, включая "Сортировать по:"
-    selected.innerHTML = `Сортировать по: <span class="catalog__sort-value">${content}</span>`;
+    // Проверяем, есть ли у селектора класс sort-selector
+    if (select.classList.contains('sort-selector')) {
+        // Обновляем текст выбранного элемента, включая "Сортировать по:"
+        selected.innerHTML = `Сортировать по: <span class="catalog__sort-value">${content}</span>`;
+    } else {
+        // Обновляем текст выбранного элемента без "Сортировать по:"
+        selected.innerHTML = `<span class="catalog__sort-value">${content}</span>`;
+    }
 
     // Меняем цвет текста на #211A00
     selected.style.color = '#211A00';
@@ -141,6 +147,7 @@ function updateSelected(select, value, content) {
     // Закрываем селектор
     toggleSelectVisibility(select);
 }
+
 
 document.addEventListener('click', function(e) {
     if (!e.target.closest('.custom-select')) {
@@ -562,36 +569,89 @@ checkAndActivateSelectors();
         maxValue.value = maxRange.value;
     }
 
-    minRange.addEventListener('input', function() {
-        if (parseInt(minRange.value) > parseInt(maxRange.value)) {
-            minRange.value = maxRange.value;
-        }
-        updateValues();
-    });
+    if(minRange && maxRange && minValue && maxValue) {
+        minRange.addEventListener('input', function() {
+            if (parseInt(minRange.value) > parseInt(maxRange.value)) {
+                minRange.value = maxRange.value;
+            }
+            updateValues();
+        });
+    
+        maxRange.addEventListener('input', function() {
+            if (parseInt(maxRange.value) < parseInt(minRange.value)) {
+                maxRange.value = minRange.value;
+            }
+            updateValues();
+        });
+    
+        minValue.addEventListener('input', function() {
+            if (parseInt(minValue.value) > parseInt(maxValue.value)) {
+                minValue.value = maxValue.value;
+            }
+            minRange.value = minValue.value;
+            updateValues();
+        });
+    
+        maxValue.addEventListener('input', function() {
+            if (parseInt(maxValue.value) < parseInt(minValue.value)) {
+                maxValue.value = minValue.value;
+            }
+            maxRange.value = maxValue.value;
+            updateValues();
+        });
+    }
 
-    maxRange.addEventListener('input', function() {
-        if (parseInt(maxRange.value) < parseInt(minRange.value)) {
-            maxRange.value = minRange.value;
-        }
-        updateValues();
-    });
+    
 
-    minValue.addEventListener('input', function() {
-        if (parseInt(minValue.value) > parseInt(maxValue.value)) {
-            minValue.value = maxValue.value;
-        }
-        minRange.value = minValue.value;
-        updateValues();
-    });
+    // Catalog Size
 
-    maxValue.addEventListener('input', function() {
-        if (parseInt(maxValue.value) < parseInt(minValue.value)) {
-            maxValue.value = minValue.value;
+        // Выбираем элементы для переключения
+        const size1 = document.querySelector('.catalog__size-1');
+        const size2 = document.querySelector('.catalog__size-2');
+        const discountItems = document.querySelectorAll('.discounts__item');
+
+        if (size1 && size2) {
+            // Обработчик для catalog__size-1
+            size1.addEventListener('click', () => {
+                // Добавляем класс 'full' всем элементам discounts__item
+                discountItems.forEach(item => {
+                    item.classList.add('full');
+                });
+
+                // Добавляем класс 'active' для catalog__size-1 и убираем его у catalog__size-2
+                size1.classList.add('active');
+                size2.classList.remove('active');
+            });
+
+            // Обработчик для catalog__size-2
+            size2.addEventListener('click', () => {
+                // Убираем класс 'full' у всех элементов discounts__item, если он есть
+                discountItems.forEach(item => {
+                    item.classList.remove('full');
+                });
+
+                // Добавляем класс 'active' для catalog__size-2 и убираем его у catalog__size-1
+                size2.classList.add('active');
+                size1.classList.remove('active');
+            });
+
         }
-        maxRange.value = maxValue.value;
-        updateValues();
-    });
+
+        
+        // Top
+
+        document.addEventListener('scroll', () => {
+            const scrollTopButton = document.querySelector('.top');
+            const scrollThreshold = document.documentElement.scrollHeight * 0.8;
+        
+            if (window.scrollY + window.innerHeight >= scrollThreshold) {
+                scrollTopButton.style.display = 'flex';
+            } else {
+                scrollTopButton.style.display = 'none';
+            }
+        });
+        
+
 
 });
-
 
