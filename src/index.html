@@ -696,6 +696,8 @@
            </div>
         </div>
     </header>
+
+
     <section class="section">
         <div class="wrapper pos-relative">
             <div class="slider__main swiper">
@@ -764,7 +766,7 @@
                     <div class="form__selectors">
                         <div class="form__selector">
                             <div class="custom-select">
-                                <div class="select-selected">Выберите бренд</div>
+                                <div class="select-selected" data-default="Выберите бренд">Выберите бренд</div>
                                 <div class="select-items select-hide">
                                     <div data-value="brand1">Mercedes 1</div>
                                     <div data-value="brand2">Mercedes 2</div>
@@ -780,7 +782,7 @@
                         </div>
                         <div class="form__selector">
                             <div class="custom-select">
-                                <div class="select-selected">Модель</div>
+                                <div class="select-selected" data-default="Модель">Модель</div>
                                 <div class="select-items select-hide">
                                     <div data-value="brand1">Mercedes 1</div>
                                     <div data-value="brand2">Mercedes 2</div>
@@ -796,7 +798,7 @@
                         </div>
                         <div class="form__selector">
                             <div class="custom-select">
-                                <div class="select-selected">Поколение</div>
+                                <div class="select-selected" data-default="Поколение">Поколение</div>
                                 <div class="select-items select-hide">
                                     <div data-value="brand1">Mercedes 1</div>
                                     <div data-value="brand2">Mercedes 2</div>
@@ -812,7 +814,7 @@
                         </div>
                         <div class="form__selector">
                             <div class="custom-select">
-                                <div class="select-selected">Кузов</div>
+                                <div class="select-selected" data-default="Кузов">Кузов</div>
                                 <div class="select-items select-hide">
                                     <div data-value="brand1">Mercedes 1</div>
                                     <div data-value="brand2">Mercedes 2</div>
@@ -828,7 +830,7 @@
                         </div>
                         <div class="form__selector">
                             <div class="custom-select">
-                                <div class="select-selected">Категория детали</div>
+                                <div class="select-selected" data-default="Категория детали">Категория детали</div>
                                 <div class="select-items select-hide">
                                     <div data-value="brand1">Mercedes 1</div>
                                     <div data-value="brand2">Mercedes 2</div>
@@ -844,7 +846,7 @@
                         </div>
                         <div class="form__selector">
                             <div class="custom-select">
-                                <div class="select-selected">Тип детали</div>
+                                <div class="select-selected" data-default="Тип детали">Тип детали</div>
                                 <div class="select-items select-hide">
                                     <div data-value="brand1">Mercedes 1</div>
                                     <div data-value="brand2">Mercedes 2</div>
@@ -859,7 +861,16 @@
                             </select>
                         </div>
                     </div>
-                    <div class="flex-offer jus-con-end">
+                    <div class="flex-offer jus-con-end al-it-end reset-sb">
+                        <button class="form__reset" >
+                            <span>
+                                Сбросить
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                <path d="M18.5 6L6.5 18" stroke="#44474C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.5 6L18.5 18" stroke="#44474C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
                         <button class="form__button disactive" >
                             Показать результаты
                         </button>
@@ -2591,8 +2602,8 @@
                 </h3>
                 <form class="feed__form">
                     <div class="feed__fields">
-                        <input type="text" class="form__input feed__input" placeholder="Ваше имя" id="feedName">
-                        <input type="text" class="form__input feed__input" placeholder="+7 (993) 345-67-67" id="feedPhone">
+                        <input type="text" class="form__input feed__input" placeholder="Ваше имя" id="feedName" required>
+                        <input type="text" class="form__input feed__input" placeholder="+7 (993) 345-67-67" id="feedPhone" required>
                     </div>
                     <button class="feed__button disactive" id="feedButton" disabled>Оставить заявку</button>
                 </form>

@@ -73,8 +73,9 @@ function checkAndActivateSelectors() {
                     selectors[index + 1].classList.add('active');
                 }
 
-                // Проверяем заполненность всех селекторов
+                // Проверяем заполненность всех селекторов и активируем кнопку сброса
                 checkAllSelectorsFilled();
+                activateResetButton(); // Вызываем функцию активации кнопки сброса
             });
         });
     });
@@ -159,6 +160,82 @@ document.addEventListener('click', function(e) {
         });
     }
 });
+
+const resetButton = document.querySelector('.form__reset');
+if (resetButton) {
+    resetButton.addEventListener('click', function(event) {
+        event.preventDefault();  // Предотвращаем обновление страницы
+
+        resetSelectors();  // Сбрасываем селекторы
+    });
+}
+
+function resetSelectors() {
+    const selectors = document.querySelectorAll('.custom-select');
+    selectors.forEach(selector => {
+        const hiddenSelect = selector.nextElementSibling;
+        const selectedItem = selector.querySelector('.select-selected');
+
+        // Сбрасываем значение скрытого селектора
+        hiddenSelect.value = '';
+
+        // Убираем класс "same-as-selected" у всех элементов списка
+        const items = selector.querySelector('.select-items');
+        items.querySelector('.same-as-selected')?.classList.remove('same-as-selected');
+
+        // Восстанавливаем текст изначального состояния для select-selected
+        const defaultText = selectedItem.dataset.default;
+        if (defaultText) {
+            selectedItem.innerHTML = defaultText;
+        }
+
+        // Возвращаем цвет текста к значению по умолчанию, если он изменялся
+        selectedItem.style.color = '#D1D1D1';
+    });
+
+    // Деактивируем кнопку сброса и удаляем класс active у элемента reset-sb
+    activateResetButton();
+    checkAllSelectorsFilled();
+}
+
+
+
+function activateResetButton() {
+    const resetButton = document.querySelector('.form__reset');
+    const resetSbElement = document.querySelector('.reset-sb');
+    const filledSelectorsCount = Array.from(document.querySelectorAll('.custom-select')).filter(select => {
+        const hiddenSelect = select.nextElementSibling;
+        return hiddenSelect && hiddenSelect.value;
+    }).length;
+
+    if (filledSelectorsCount > 1) {
+        resetButton.classList.add('active');
+        resetButton.disabled = false;
+
+        if (resetSbElement) {
+            resetSbElement.classList.add('active');
+        }
+    } else {
+        resetButton.classList.remove('active');
+        resetButton.disabled = true;
+
+        if (resetSbElement) {
+            resetSbElement.classList.remove('active');
+        }
+    }
+}
+
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.custom-select')) {
+        document.querySelectorAll('.select-items').forEach(function(items) {
+            items.style.display = 'none';
+        });
+        document.querySelectorAll('.select-selected').forEach(function(selected) {
+            selected.classList.remove('select-arrow-active');
+        });
+    }
+});
+
 
 // Устанавливаем начальное состояние селекторов
 checkAndActivateSelectors();

@@ -44,6 +44,27 @@
             pointer-events: none; /* Отключаем взаимодействие */
         }
     }
+
+    &__reset {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        border: none;
+        border-radius: 3px;
+        background: var(--100, #F8F8F8);
+        padding: 0 12px;
+        color: var(--800, #44474C);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 20px */
+        cursor: pointer;
+        &.active {
+            display: flex;
+        }
+    }
     
     /* Стили для активного состояния */
     &__button.active {
@@ -179,6 +200,12 @@
             color: var(--650, #848589);
         }
     }   
+    .reset-sb {
+        justify-content: flex-end;
+        &.active {
+            justify-content: space-between;
+        }
+    }
 }
 
 .form__selector.disactive {
