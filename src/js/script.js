@@ -749,7 +749,27 @@ checkAndActivateSelectors();
             });
         }
         
+        // FAQ
 
+        const faqItems = document.querySelectorAll('.text__faq');
+
+        if (faqItems) {
+            faqItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    // Проверяем, есть ли уже класс 'active'
+                    const isActive = this.classList.contains('active');
+    
+                    // Сначала снимаем класс 'active' со всех элементов
+                    faqItems.forEach(faq => faq.classList.remove('active'));
+    
+                    // Если кликнутый элемент не был активным, добавляем ему класс 'active'
+                    if (!isActive) {
+                        this.classList.add('active');
+                    }
+                });
+            });
+        }
+        
 
 });
 

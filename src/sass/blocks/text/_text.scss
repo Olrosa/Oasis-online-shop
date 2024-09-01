@@ -94,4 +94,29 @@
             gap: 14px;
         }
     }
+    &__faq {
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--400, #D1D1D1);
+        cursor: pointer;
+        .text__content-title {
+            font-size: 16px;
+            margin-left: 14px;
+        }
+        .text__faq-descr {
+            display: none;
+        }
+        svg {
+            transition: .2s all;
+        }
+        &.active {
+            .text__faq-descr {
+                display: block;
+                margin-top: 10px;
+                margin-left: 14px;
+            }
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
 }
