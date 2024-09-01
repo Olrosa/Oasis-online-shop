@@ -35,6 +35,9 @@
             border-radius: 3px;
             background: var(--800, #44474C);
             cursor: pointer;
+            &.active {
+                background: #211A00;
+            }
         }
     }
     &__search {

@@ -585,6 +585,7 @@ checkAndActivateSelectors();
 
     // Получаем все элементы, которые нам нужны
     const catalogOverlay = document.querySelector('.overlay[data-modal="catalog"]');
+    const catalogButtonColor = document.querySelector('button.header__catalog-btn');
     const catalogButton = document.querySelector('button.header__catalog-btn img');
 
     // Функция для обновления изображения кнопки
@@ -592,9 +593,12 @@ checkAndActivateSelectors();
         if (catalogOverlay.classList.contains('active')) {
             // Если каталог активен, меняем изображение на закрытое
             catalogButton.src = 'img/icons/burger_close.svg';
+            catalogButtonColor.classList.add('active');
         } else {
             // Если каталог неактивен, меняем изображение на открытое
             catalogButton.src = 'img/icons/burger_open.svg';
+            catalogButtonColor.classList.remove('active');
+
         }
     }
 
