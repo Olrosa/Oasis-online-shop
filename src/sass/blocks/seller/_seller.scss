@@ -1,55 +1,4 @@
 .seller {
-    &__offer {
-        display: flex;
-        gap: 26px;
-    }
-    &__shop {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        width: 420px;
-        &-block {
-            padding: 23px;
-            border-radius: 3px;
-            border: 1px solid var(--200, #EDEEF2);
-            background: var(--0, #FFF);
-            box-shadow: 0px 4px 42px 0px rgba(0, 0, 0, 0.05);
-        }
-        &-img {
-            width: 100%;
-            height: 255px;
-            object-fit: cover;
-            border-radius: 3px;
-            background: url(<path-to-image>) lightgray 50% / cover no-repeat;
-        }
-    }
-    &__items {
-        display: flex;
-    }
-    &__rate {
-        color: #000;
-        font-feature-settings: 'liga' off, 'clig' off;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 125%; /* 25px */
-    }
-    &__reliability {
-        display: flex;
-        gap: 8px;
-        padding: 14px 16px;
-        width: 100%;
-        border-radius: 3px;
-        border: 1px solid var(--300, #E6E7E9);
-        background: var(--0, #FFF);
-        align-items: center;
-        
-    }
-    &__items {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-    }
     .header__search {
         width: 100%;
     }
@@ -92,4 +41,195 @@
         width: 20px;
         height: 20px;
     }
+    &__offer {
+        display: flex;
+        gap: 26px;
+    }
+    &__shop {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        
+        &-block {
+            width: 420px;
+            padding: 23px;
+            border-radius: 3px;
+            border: 1px solid var(--200, #EDEEF2);
+            background: var(--0, #FFF);
+            box-shadow: 0px 4px 42px 0px rgba(0, 0, 0, 0.05);
+        }
+        &-img {
+            width: 100%;
+            height: 255px;
+            object-fit: cover;
+            border-radius: 3px;
+            background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+        }
+    }
+    &__items {
+        display: flex;
+    }
+    &__rate {
+        color: #000;
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 25px */
+    }
+    &__reliability {
+        display: flex;
+        gap: 8px;
+        padding: 14px 16px;
+        width: 100%;
+        border-radius: 3px;
+        border: 1px solid var(--300, #E6E7E9);
+        background: var(--0, #FFF);
+        align-items: center;
+        
+    }
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    &__reviews {
+        &-offer {
+            width: 100%;
+            gap: 40px;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+        &-nums {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 100%;
+        }
+        &-title {
+            color: var(--1000, #211A00);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 116%; /* 37.12px */
+        }
+        &-descr {
+            width: 198px;
+            color: var(--800, #44474C);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 125%; /* 17.5px */
+        }
+        &-stars {
+            width: 100%;
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            .discounts__star {
+                width: 20px !important;
+                height: 20px !important;
+            }
+        }
+        &-line {
+            position: relative;
+            width: 100%;
+            height: 4px;
+            border-radius: 32px;
+            background: var(--300, #E6E7E9);
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background: #848589;
+                border-radius: 32px;
+                width: 0; /* Начальная ширина */
+            }
+        }
+        &-number {
+            color: var(--1000, #211A00);
+            text-align: right;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 125%; /* 17.5px */
+        }
+        &-items {
+            width: 100%;
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 52px;
+        }
+        &-item {
+            width: 100%;
+        }
+        &-img {
+            width: 41px;
+            height: 41px;
+            object-fit: cover;
+        }
+        &-name {
+            color: var(--1000, #211A00);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 125%; /* 20px */
+        }
+        &-date {
+            color: var(--400, #D1D1D1);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 125%; /* 15px */
+        }
+        &-stars {
+            margin-top: 10px;
+            .discounts__star {
+                width: 18px;
+                height: 18px;
+            }
+        }
+        &-descr {
+            width: 100%;
+            margin-top: 24px;
+            color: var(--1000, #211A00);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 125%; /* 17.5px */
+        }
+        &-button {
+            max-width: 250px;
+        }
+        .select-selected {
+            justify-content: flex-start;
+        }
+        .seller__rate {
+            font-size: 62px;
+        }
+        .card__seller-rank {
+            margin-top: 18px;
+            gap: 15px !important;
+        }
+        .discounts__star {
+            width: 30px;
+            height: 30px;
+        }
+        .discounts__stars-count {
+
+        }
+        .discounts__stars {
+
+        }
+    }
+    
 }

@@ -318,6 +318,35 @@ checkAndActivateSelectors();
         },
     });
 
+    const sellerSlider = new Swiper('.slider__seller', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        navigation: {
+            nextEl: '.seller-arrow-next',
+            prevEl: '.seller-arrow-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                centeredSlides: true,
+                initialSlide: 1,
+            },
+            576: {
+                slidesPerView: 1,
+                centeredSlides: false,
+                initialSlide: 0,
+            },
+            1024: {
+                slidesPerView: 1,
+            },
+        },
+    });
+
     const mainSlider2 = new Swiper('.slider__main-2', {
         slidesPerView: 1,
         spaceBetween: 10,
@@ -731,11 +760,15 @@ checkAndActivateSelectors();
             const scrollTopButton = document.querySelector('.top');
             const scrollThreshold = document.documentElement.scrollHeight * 0.8;
         
-            if (window.scrollY + window.innerHeight >= scrollThreshold) {
-                scrollTopButton.style.display = 'flex';
-            } else {
-                scrollTopButton.style.display = 'none';
+            if(scrollTopButton) {
+                if (window.scrollY + window.innerHeight >= scrollThreshold) {
+                    scrollTopButton.style.display = 'flex';
+                } else {
+                    scrollTopButton.style.display = 'none';
+                }
             }
+
+           
         });
         
 
@@ -775,7 +808,51 @@ checkAndActivateSelectors();
                 });
             });
         }
-        
+    
+    // Line-reviews
+
+    const lines = document.querySelectorAll('.seller__reviews-line');
+    
+    if(lines) {
+        lines.forEach(line => {
+            const percentage = line.getAttribute('data-percentage');
+            const beforeElement = document.createElement('div');
+            beforeElement.style.width = percentage + '%';
+            beforeElement.style.height = '100%';
+            beforeElement.style.background = '#848589';
+            beforeElement.style.borderRadius = '32px';
+            beforeElement.style.position = 'absolute';
+            beforeElement.style.top = '0';
+            beforeElement.style.left = '0';
+            line.appendChild(beforeElement);
+        });
+    }
+
+    // Card images
+
+    // Получаем все миниатюры изображений
+    const thumbnails = document.querySelectorAll('.card__images-img');
+    // Получаем главное изображение
+    const mainImage = document.querySelector('.card__image');
+
+    // Добавляем обработчик событий для каждого миниатюрного изображения
+
+    if (thumbnails) {
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                // Удаляем класс active у всех миниатюр
+                thumbnails.forEach(img => img.classList.remove('active'));
+                
+                // Добавляем класс active к кликнутой миниатюре
+                this.classList.add('active');
+                
+                // Меняем главное изображение на изображение кликнутой миниатюры
+                mainImage.src = this.src;
+            });
+        });
+    }
+    
+    
 
 });
 
