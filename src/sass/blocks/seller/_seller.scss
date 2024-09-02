@@ -1,0 +1,95 @@
+.seller {
+    &__offer {
+        display: flex;
+        gap: 26px;
+    }
+    &__shop {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 420px;
+        &-block {
+            padding: 23px;
+            border-radius: 3px;
+            border: 1px solid var(--200, #EDEEF2);
+            background: var(--0, #FFF);
+            box-shadow: 0px 4px 42px 0px rgba(0, 0, 0, 0.05);
+        }
+        &-img {
+            width: 100%;
+            height: 255px;
+            object-fit: cover;
+            border-radius: 3px;
+            background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+        }
+    }
+    &__items {
+        display: flex;
+    }
+    &__rate {
+        color: #000;
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 25px */
+    }
+    &__reliability {
+        display: flex;
+        gap: 8px;
+        padding: 14px 16px;
+        width: 100%;
+        border-radius: 3px;
+        border: 1px solid var(--300, #E6E7E9);
+        background: var(--0, #FFF);
+        align-items: center;
+        
+    }
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    .header__search {
+        width: 100%;
+    }
+    .catalog__sort {
+        margin-top: 0;
+    }
+    .discounts__offer {
+        margin-top: 24px;
+        flex-wrap: wrap;
+        gap: 13px;
+        justify-content: flex-start;
+    }
+    .discounts__full-descr, .discounts__full-descr .discounts__title {
+        display: none;
+    }
+    .discounts__item {
+        
+        width: calc(33% - 8px);
+        flex: none;
+    }
+    .card__seller {
+        &-rank {
+            gap: 6px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        &-name {
+            color: var(--1000, #211A00);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 125%; /* 30px */
+        }
+        &-count {
+            font-size: 16px;
+        }
+    }
+    .discounts__star {
+        width: 20px;
+        height: 20px;
+    }
+}

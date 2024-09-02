@@ -208,6 +208,22 @@
     }
 }
 
+.button {
+    border: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    color: var(--800, #44474C);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%; /* 20px */
+    border-radius: 3px;
+    background: #EEE7D2;
+}
+
 .form__selector.disactive {
     /* opacity: 0.5; */
     pointer-events: none;
