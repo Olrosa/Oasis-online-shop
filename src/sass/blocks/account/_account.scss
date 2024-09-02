@@ -1,0 +1,105 @@
+.account {
+    &__offer {
+        display: flex;
+        gap: 26px
+    }
+    &__person {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        gap: 8px;
+        &-offer {
+            padding: 24px;
+            border-radius: 3px;
+            border: 1px solid var(--200, #EDEEF2);
+            background: var(--0, #FFF);
+            box-shadow: 0px 4px 42px 0px rgba(0, 0, 0, 0.05);
+        }
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 75%;
+        padding: 24px;
+        border-radius: 3px;
+        border: 1px solid var(--200, #EDEEF2);
+        background: var(--0, #FFF);
+        box-shadow: 0px 4px 42px 0px rgba(0, 0, 0, 0.05);
+    }
+    &__title {
+        color: var(--1000, #211A00);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 30px */
+    }
+    &__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 106px;
+        height: 106px;
+        border-radius: 50%;
+        background: var(--200, #EDEEF2);
+        cursor: pointer;
+    }
+    &__name {
+        margin-top: 24px;
+        color: var(--1000, #211A00);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 30px */
+    }
+    &__info {
+        padding: 24px;
+        border-radius: 3px;
+        border: 1px solid var(--200, #EDEEF2);
+        background: var(--0, #FFF);
+        box-shadow: 0px 4px 42px 0px rgba(0, 0, 0, 0.05);
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    &__input {
+        max-width: 368px;
+        height: 40px;
+    }
+    &__descr {
+        color: var(--400, #D1D1D1);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 125%; /* 17.5px */
+    }
+    &__date {
+        max-width: 368px;
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 8px;
+        &-item {
+            width: 100%;
+        }
+    }
+    &__sex {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    &__button {
+        max-width: 260px;
+    }
+    a {
+        color: #0D61AF;
+    }
+    .text__nav {
+        width: 100%;
+    }
+}

@@ -206,6 +206,53 @@
             justify-content: space-between;
         }
     }
+    
+}
+
+.radio {
+    &-label {
+        display: flex;
+        align-items: center;
+        color: var(--650, #848589);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 20px */
+        cursor: pointer;
+    }
+    &-input {
+        display: none; /* Скрываем стандартное отображение радио-кнопок */
+    }
+    &-custom {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #848589;
+        border-radius: 50%;
+        position: relative;
+        margin-right: 8px;
+        &:after {
+            content: "";
+            width: 14px;
+            height: 14px;
+            background-color: #848589;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+    }
+}
+
+.radio-input:checked + .radio-custom::after {
+    opacity: 1;
+}
+
+.radio-text {
+    font-weight: bold; /* Делаем текст жирным */
 }
 
 .button {
@@ -224,6 +271,7 @@
     background: #EEE7D2;
     &.disactive {
         background: #F8F8F8;
+        color: #D1D1D1;
     }
 }
 
