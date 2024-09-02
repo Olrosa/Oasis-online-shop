@@ -121,7 +121,75 @@
         background: #FFF;
         margin: 0 auto;
     }
+    &-img {
+        position: relative;
+        padding: 38px;
+        border-radius: 3px 3px 0px 0px;
+        background: var(--0, #FFF);
+        &-title {
+            color: var(--1000, #211A00);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 125%; /* 30px */
+        }
+    }
+    &-history {
+        position: relative;
+        padding: 38px;
+        border-radius: 3px 3px 0px 0px;
+        background: var(--0, #FFF);
+        
+        &-title {
+            color: var(--1000, #211A00);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 125%; /* 30px */
+        }
+        .history {
+            &__offer {
+                overflow: hidden;
+            }
+            &__item {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 75px;
+                &::before {
+                    position: absolute;
+                    content: '';
+                    bottom: 0;
+                    left: -100px;
+                    width: 500px;
+                    height: 1px;
+                    background-color: #D1D1D1;
+                }
+            }
+            &__title {
+                color: var(--1000, #211A00);
+                font-feature-settings: 'liga' off, 'clig' off;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 125%; /* 20px */
+            }
+            &__place {
+                color: var(--400, #D1D1D1);
+                font-feature-settings: 'liga' off, 'clig' off;
 
+                /* Заголовок H7 */
+                font-family: Inter;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 125%; /* 17.5px */
+            }
+        }
+    }
 }
 
 .overlay-catalog-col.img .overlay-catalog-item {

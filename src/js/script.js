@@ -884,9 +884,37 @@ checkAndActivateSelectors();
         });
     }
 
+    // Account
+
+    // Получаем все табы
+    const tabs = document.querySelectorAll(".text__nav-subtitle");
+    const tabContents = document.querySelectorAll("[data-active]");
+
+    if (tabs) {
+        tabs.forEach(tab => {
+            tab.addEventListener("click", function() {
+                // Убираем класс active у всех табов
+                tabs.forEach(item => item.classList.remove("active"));
     
+                // Добавляем класс active к текущему табу
+                tab.classList.add("active");
     
+                const target = tab.getAttribute("data-active");
+    
+                // Скрываем все контенты табов
+                tabContents.forEach(content => {
+                    if (content.dataset.active === target) {
+                        content.classList.add("active");
+                    } else {
+                        content.classList.remove("active");
+                    }
+                });
+            });
+        });
+    }
     
 
+    
+    
 });
 

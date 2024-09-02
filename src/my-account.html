@@ -538,6 +538,66 @@
             </div>
         </div>
     </div>
+
+    <div class="overlay" data-modal="img">
+        <div class="overlay-content overlay-img">
+            <div class="overlay-close close-modal">
+                <svg class="overlay-close-btn" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M16.5 5.5L5.5 16.5" stroke="#848589" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5.5 5.5L16.5 16.5" stroke="#848589" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+                <!-- CONTENT -->
+           <div class="flex-offer-col gap-25">
+                <h4 class="overlay-img-title">
+                    Загрузить фото профиля
+                </h4>
+                <button class="button">
+                    Выбрать файл
+                </button>
+           </div>
+        </div>
+    </div>
+
+    <div class="overlay" data-modal="history">
+        <div class="overlay-content overlay-history">
+            <div class="overlay-close close-modal">
+                <svg class="overlay-close-btn" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M16.5 5.5L5.5 16.5" stroke="#848589" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5.5 5.5L16.5 16.5" stroke="#848589" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+                <!-- CONTENT -->
+           <div class="flex-offer-col gap-25 history__offer">
+                <h4 class="overlay-img-title">
+                    История перемещений
+                </h4>
+                <div class="flex-offer-col">
+                    <div class="history__item">
+                        <div class="flex-offer-col gap-8">
+                            <p class="history__title">
+                                Прибыло в сортировочный центр
+                            </p>
+                            <span class="history__place">
+                                5 сентября в 23:19 - RU, Архангельск ЛПЦ, 35435
+                            </span>
+                        </div>
+                    </div>
+                    <div class="history__item">
+                        <div class="flex-offer-col gap-8">
+                            <p class="history__title">
+                                Прибыло в сортировочный центр
+                            </p>
+                            <span class="history__place">
+                                5 сентября в 23:19 - RU, Архангельск ЛПЦ, 35435
+                            </span>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+
     <header class="header" id="header">
         <div class="wrapper">
             <div class="flex-offer jus-con-sb header__up">
@@ -696,7 +756,7 @@
             <div class="account__offer">
                 <div class="account__person">
                     <div class="account__person-offer">
-                        <div class="account__img">
+                        <div class="account__img open-modal" data-modal="img">
                             <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
                                 <g clip-path="url(#clip0_2179_27256)">
                                   <path d="M2.33594 2.33203L53.6693 53.6654" stroke="#F8F8F8" stroke-width="4.66667" stroke-linecap="round" stroke-linejoin="round"/>
@@ -717,16 +777,16 @@
                         <span class="text__nav-title">
                            Профиль
                         </span>
-                        <span class="text__nav-subtitle active" >
+                        <span class="text__nav-subtitle active" data-active="info">
                             Личная информация
                         </span>
-                        <span class="text__nav-subtitle" >
+                        <span class="text__nav-subtitle" data-active="orders">
                             Мои заказы
                         </span>
                        
                     </div>
                 </div>
-                <div class="account__info">
+                <div class="account__info active" data-active="info">
                     <h1 class="account__title">
                         Личная информация
                     </h1>
@@ -819,6 +879,84 @@
                             Применить изменения
                         </button>
                     </form>
+                </div>
+                <div class="account__orders" data-active="orders">
+                    <h1 class="account__title">
+                        Мои заказы
+                    </h1>
+                    <div class="account__order">
+                        <div class="flex-offer gap-20">
+                            <img src="img/main/thumbnail.webp" alt="Заказ" class="account__order-img">
+                            <div class="flex-offer-col jus-con-sa">
+                                <span class="account__order-descr">Номер заказа: 768769</span>
+                                <p class="account__order-name">Текущий статус заказа</p>
+                                <span class="account__order-descr">Доставка ожидается 6 сентября</span>
+                            </div>
+                        </div>
+                        <div class="flex-offer gap-20 al-it-cen no-wrap">
+                            <span class="account__order-name">
+                                5200₽
+                            </span>
+                            <button class="button account__order-btn open-modal" data-modal="history">
+                                Отследить заказ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="account__order">
+                        <div class="flex-offer gap-20">
+                            <img src="img/main/thumbnail.webp" alt="Заказ" class="account__order-img">
+                            <div class="flex-offer-col jus-con-sa">
+                                <span class="account__order-descr">Номер заказа: 768769</span>
+                                <p class="account__order-name">Текущий статус заказа</p>
+                                <span class="account__order-descr">Доставка ожидается 6 сентября</span>
+                            </div>
+                        </div>
+                        <div class="flex-offer gap-20 al-it-cen no-wrap">
+                            <span class="account__order-name">
+                                5200₽
+                            </span>
+                            <button class="button account__order-btn open-modal" data-modal="history">
+                                Отследить заказ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="account__order">
+                        <div class="flex-offer gap-20">
+                            <img src="img/main/thumbnail.webp" alt="Заказ" class="account__order-img">
+                            <div class="flex-offer-col jus-con-sa">
+                                <span class="account__order-descr">Номер заказа: 768769</span>
+                                <p class="account__order-name">Текущий статус заказа</p>
+                                <span class="account__order-descr">Доставка ожидается 6 сентября</span>
+                            </div>
+                        </div>
+                        <div class="flex-offer gap-20 al-it-cen no-wrap">
+                            <span class="account__order-name">
+                                5200₽
+                            </span>
+                            <button class="button account__order-btn open-modal" data-modal="history">
+                                Отследить заказ
+                            </button>
+                        </div>
+                    </div>
+                    <button class="account__more">
+                        Показать еще
+                    </button>
+                </div>
+                <div class="account__orders" data-active="empty">
+                    <h1 class="account__title">
+                        Мои заказы
+                    </h1>
+                    <div class="account__empty">
+                        <div class="flex-offer-col gap-15">
+                            <h1 class="account__empty-title-2">
+                                Заказов пока нет
+                            </h1>
+                            <h3 class="account__empty-subtitle">
+                                На этой странице будут отображаться ваши заказы
+                            </h3>
+                        </div>
+                        <a href="/catalog.html" class="button button-empty">Перейти в каталог</a>
+                    </div>
                 </div>
             </div>
         </div>
