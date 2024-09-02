@@ -190,6 +190,47 @@
             }
         }
     }
+    &-review {
+        position: relative;
+        padding: 38px;
+        border-radius: 3px 3px 0px 0px;
+        background: var(--0, #FFF);
+        width: 468px;
+        z-index: 4;
+        .review {
+            &__title {
+                color: var(--1000, #211A00);
+                font-feature-settings: 'liga' off, 'clig' off;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 125%; /* 30px */
+            }
+            &__area {
+                display: flex;
+                justify-content: flex-start;
+                margin-top: 29px;
+                height: 165px;
+                width: 100%;
+            }
+            &__button {
+                margin-top: 24px;
+                width: 100%;
+            }
+            &__ps {
+                color: var(--400, #D1D1D1);
+                text-align: center;
+                font-feature-settings: 'liga' off, 'clig' off;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 125%; /* 17.5px */
+                a {
+                    color: #0D61AF;
+                }
+            }
+        }
+    }
 }
 
 .overlay-catalog-col.img .overlay-catalog-item {

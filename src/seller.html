@@ -18,6 +18,8 @@
 <body>
     <!-- ------ OVERLAY, POP UP's ------ -->
 
+    
+
     <div class="overlay opacity" data-modal="catalog">
         <div class="overlay-content overlay-catalog">
             <div class="wrapper">
@@ -539,6 +541,44 @@
         </div>
     </div>
 
+    <div class="overlay" data-modal="review">
+        <div class="overlay-content overlay-review">
+            <div class="overlay-close close-modal">
+                <svg class="overlay-close-btn" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M16.5 5.5L5.5 16.5" stroke="#848589" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5.5 5.5L16.5 16.5" stroke="#848589" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+                <!-- CONTENT -->
+           <div class="flex-offer-col gap-25 review__offer">
+                <h4 class="review__title">
+                    Оставить отзыв
+                </h4>
+                <form class="review__form">
+                    <div class="flex-offer-col gap-18">
+                        <input type="text" class="form__input review__input" placeholder="Имя" id="name">
+                        <div class="flex-offer-col gap-8">
+                            <input type="text" class="form__input review__input" placeholder="Ваш email" id="email">
+                            <div class="flex-offer gap-10 al-it-cen no-wrap">
+                                <input type="checkbox" id="email"> 
+                                <label for="email" class="checkbox-descr">Хочу получать рассылку по Email</label>
+                            </div>
+                        </div>
+                    </div>
+                    <textarea class="form__input review__area" placeholder="Отзыв" id="text"></textarea>
+                    <div class="flex-offer-col gap-18">
+                        <button class="button review__button">
+                            Оставить отзыв
+                        </button>
+                        <p class="review__ps">
+                            Отправляя отзыв Вы принимаете нашу <a href="#">политику обработки персональных данных</a>
+                        </p>
+                    </div>
+                </form>
+           </div>
+        </div>
+    </div>
+
     <header class="header" id="header">
         <div class="wrapper">
             <div class="flex-offer jus-con-sb header__up">
@@ -759,7 +799,7 @@
                         </div>
                     </div>
                     <div class="seller__shop-block">
-                        <button class="button">
+                        <button class="button open-modal" data-modal="review">
                             Оставить отзыв
                         </button>
                     </div>
@@ -1609,7 +1649,7 @@
                                 <p class="seller__reviews-descr">
                                     Рейтинг - это среднее орифметическое оценок пользователей
                                 </p>
-                                <button class="button">
+                                <button class="button open-modal" data-modal="review">
                                     Оставить отзыв
                                 </button>
                             </div>
