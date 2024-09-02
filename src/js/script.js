@@ -851,6 +851,40 @@ checkAndActivateSelectors();
             });
         });
     }
+
+    // Cart counter
+
+    const counterPlus = document.querySelector('.cart__counter-plus');
+    const counterMinus = document.querySelector('.cart__counter-minus');
+    const counterValue = document.querySelector('.cart__counter-value');
+
+    // Функция для обновления значения счетчика
+    function updateCounter(delta) {
+        let currentValue = parseInt(counterValue.textContent); // текущее значение
+        let newValue = currentValue + delta; // новое значение
+
+        // Проверяем, чтобы значение не было меньше 1
+        if (newValue < 1) {
+            newValue = 1;
+        }
+
+        // Обновляем текстовое содержимое элемента
+        counterValue.textContent = newValue;
+    }
+
+    if (counterPlus && counterMinus) {
+        // Обработчик клика для увеличения значения
+        counterPlus.addEventListener('click', () => {
+            updateCounter(1); // увеличиваем значение на 1
+        });
+
+        // Обработчик клика для уменьшения значения
+        counterMinus.addEventListener('click', () => {
+            updateCounter(-1); // уменьшаем значение на 1
+        });
+    }
+
+    
     
     
 

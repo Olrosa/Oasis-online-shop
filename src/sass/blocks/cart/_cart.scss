@@ -1,0 +1,179 @@
+.cart {
+    &__offer {
+        display: flex;
+        gap: 26px;
+    }
+    &__main {
+        width: 75%;
+        padding: 24px;
+        border: 1px solid var(--200, #EDEEF2);
+        background: var(--0, #FFF);
+        box-shadow: 0px 4px 42px 0px rgba(0, 0, 0, 0.05);
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 25%;
+        padding: 24px;
+        border: 1px solid var(--200, #EDEEF2);
+        background: var(--0, #FFF);
+        box-shadow: 0px 4px 42px 0px rgba(0, 0, 0, 0.05);
+        align-self: flex-start;
+        &-descr {
+            color: var(--1000, #211A00);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 125%; /* 20px */
+        }
+    }
+    &__result {
+        color: var(--650, #848589);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 125%; /* 17.5px */
+    }
+    &__title {
+        color: var(--1000, #211A00);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 30px */
+    }
+    &__items {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    &__item {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 18px;
+        width: 100%;
+        border-radius: 3px;
+        border: 1px solid var(--200, #EDEEF2);
+        background: #FFF;
+    }
+    &__img {
+        width: 208px;
+        height: 170px;
+        object-fit: cover;
+    }
+    &__name {
+        color: var(--650, #848589);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 20px */
+    }
+    &__counter {
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100px;
+        padding: 8px;
+        border-radius: 3px;
+        border: 1px solid var(--200, #EDEEF2);
+        background: #FFF;
+        color: var(--800, #44474C);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 20px */
+        svg {
+            cursor: pointer;
+        }
+    }
+    &__seller {
+        &-img {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        &-name {
+            height: 100%;
+            padding: 1px 6px;
+            border-radius: 3px;
+            background: var(--200, #EDEEF2);
+            color: var(--800, #44474C);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 125%; /* 17.5px */
+        }
+    }
+    &__descr {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__cost {
+        padding-top: 55px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__remove {
+        position: absolute;
+        cursor: pointer;
+        top: 18px;
+        right: 18px;
+    }
+    &__price {
+        text-align: right;
+        color: var(--1000, #211A00);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 25px */
+    }
+    &__old {
+        text-align: right;
+        color: var(--400, #D1D1D1);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 125%; /* 17.5px */
+        text-decoration: line-through;
+    }
+    &__art {
+        text-align: right;
+        color: var(--650, #848589);
+        text-align: right;
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 125%; /* 15px */
+    }
+    .discounts__like {
+        top: 18px;
+        right: 57px;
+        path {
+            stroke: #44474C;
+        }
+        &.active, &:hover {
+            path {
+                stroke: #44474C;
+                fill: #44474C;
+            }
+        }
+    }
+    .button {
+        white-space: nowrap; 
+    }
+}
