@@ -769,9 +769,26 @@
                                 </defs>
                             </svg>
                         </div>
-                        <h4 class="account__name">
-                            Пользователь 8738
-                        </h4>
+                        <div class="flex-offer-col gap-8">
+                            <h4 class="account__name">
+                                Александр Быков
+                            </h4>
+                            <div class="card__seller-rank al-it-cen jus-con-st">
+                                <span class="seller__rate">4.2</span>
+                                <div class="flex-offer al-it-cen gap-8">
+                                    <div class="discounts__stars">
+                                        <div class="discounts__star fill"></div>
+                                        <div class="discounts__star fill"></div>
+                                        <div class="discounts__star fill"></div>
+                                        <div class="discounts__star fill"></div>
+                                        <div class="discounts__star half"></div>
+                                    </div>
+                                    <span class="discounts__stars-count">
+                                       232
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="text__nav">
                         <span class="text__nav-title">
@@ -896,7 +913,7 @@
                     
                     <div class="account__orders" data-active="orders">  
                         <h1 class="account__title">
-                            Мои отзывы
+                            Мои заказы
                         </h1>
                         <div class="account__order">
                             <div class="flex-offer gap-20">
@@ -956,7 +973,305 @@
                             Показать еще
                         </button>
                     </div>
-                    <div class="account__reviews active" data-active="reviews">
+                    <div class="account__articles active" data-active="articles">  
+                        <div class="flex-offer jus-con-sb no-wrap">
+                            <h1 class="account__title">
+                                Мои объявления
+                            </h1>
+                            <button class="button account__add">
+                                Разместить
+                            </button>
+                        </div>
+                        <div class="discounts__item flex-offer-col flex-1 jus-con-sb full">
+                            <div class="discounts__item-offer">
+                                <div class="flex-offer gap-20 no-wrap discounts__w70">
+                                    <svg class="discounts__like" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64157 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77739 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987Z" fill="white" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                      </svg>
+                                    <img src="img/main/thumbnail.webp" alt="Скидка 20%" class="discounts__img">
+                                    <div class="discounts__full-descr">
+                                        <h4 class="discounts__full-title">
+                                            Набор тормозных дисков GigaTormoz Pro Super Ti Ultimate
+                                        </h4>
+                                        <p class="discounts__full-descr">
+                                            Описание товара желательно распологать в 2-3 строчки, иначе это может создать много “шума”
+                                        </p>
+                                        <div class="discounts__full-attributes">
+                                            <div class="flex-offer gap-15">
+                                                <span class="discounts__full-attribute">
+                                                    Характеристика: 
+                                                </span>
+                                                <span class="discounts__full-value">
+                                                    Значение
+                                                </span>
+                                            </div>
+                                            <div class="flex-offer gap-15">
+                                                <span class="discounts__full-attribute">
+                                                    Характеристика: 
+                                                </span>
+                                                <span class="discounts__full-value">
+                                                    Значение
+                                                </span>
+                                            </div>
+                                            <div class="flex-offer gap-15">
+                                                <span class="discounts__full-attribute">
+                                                    Характеристика: 
+                                                </span>
+                                                <span class="discounts__full-value">
+                                                    Значение
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="toggle-options ">
+                                            <div class="toggle-option account__option">
+                                                <input type="checkbox" id="discount" checked="checked">
+                                                <label class="catalog__filter-title" for="discount" >Объявление активно</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                               
+                                <div class="flex-offer-col jus-con-sb">
+                                    <div class="discounts__price flex-offer gap-15 no-wrap">
+                                        <div class="flex-offer-col gap-5">
+                                            <span class="discounts__cost">
+                                                28 000₽
+                                            </span>
+                                            <span class="discounts__old">
+                                                32 000₽
+                                            </span>
+                                        </div>
+                                        <span class="discounts__aed">
+                                            64.67 AED
+                                        </span>
+                                        <svg class="account__edit" xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none">
+                                            <path d="M11 18.833H19.25" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M15.125 3.70822C15.4897 3.34354 15.9843 3.13867 16.5 3.13867C16.7554 3.13867 17.0082 3.18897 17.2441 3.28669C17.4801 3.38441 17.6944 3.52765 17.875 3.70822C18.0556 3.88878 18.1988 4.10315 18.2965 4.33907C18.3942 4.57499 18.4445 4.82785 18.4445 5.08322C18.4445 5.33858 18.3942 5.59144 18.2965 5.82736C18.1988 6.06328 18.0556 6.27765 17.875 6.45822L6.41667 17.9165L2.75 18.8332L3.66667 15.1665L15.125 3.70822Z" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-offer-col gap-8 account__card-seller">
+                                        <a href="#" class="discounts__seller flex-offer al-it-cen gap-8">
+                                            <img src="img/icons/seller.webp" alt="Изображение продавца" class="discounts__seller-img">
+                                            <span class="discounts__seller-name">
+                                                oasis auto
+                                            </span>
+                                        </a>
+                                        <div class="flex-offer al-it-cen gap-8">
+                                            <div class="discounts__stars">
+                                                <div class="discounts__star fill"></div>
+                                                <div class="discounts__star fill"></div>
+                                                <div class="discounts__star fill"></div>
+                                                <div class="discounts__star fill"></div>
+                                                <div class="discounts__star half"></div>
+                                            </div>
+                                            <span class="discounts__stars-count">
+                                                232
+                                            </span>
+                                        </div>
+                                        
+                                    </div>
+                                    <span class="account__art">
+                                        арт: 678687
+                                    </span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="discounts__item flex-offer-col flex-1 jus-con-sb full disactive">
+                            <div class="discounts__item-offer">
+                                <div class="flex-offer gap-20 no-wrap discounts__w70">
+                                    <svg class="discounts__like" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64157 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77739 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987Z" fill="white" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                      </svg>
+                                    <img src="img/main/thumbnail.webp" alt="Скидка 20%" class="discounts__img">
+                                    <div class="discounts__full-descr">
+                                        <h4 class="discounts__full-title">
+                                            Набор тормозных дисков GigaTormoz Pro Super Ti Ultimate
+                                        </h4>
+                                        <p class="discounts__full-descr">
+                                            Описание товара желательно распологать в 2-3 строчки, иначе это может создать много “шума”
+                                        </p>
+                                        <div class="discounts__full-attributes">
+                                            <div class="flex-offer gap-15">
+                                                <span class="discounts__full-attribute">
+                                                    Характеристика: 
+                                                </span>
+                                                <span class="discounts__full-value">
+                                                    Значение
+                                                </span>
+                                            </div>
+                                            <div class="flex-offer gap-15">
+                                                <span class="discounts__full-attribute">
+                                                    Характеристика: 
+                                                </span>
+                                                <span class="discounts__full-value">
+                                                    Значение
+                                                </span>
+                                            </div>
+                                            <div class="flex-offer gap-15">
+                                                <span class="discounts__full-attribute">
+                                                    Характеристика: 
+                                                </span>
+                                                <span class="discounts__full-value">
+                                                    Значение
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="toggle-options ">
+                                            <div class="toggle-option account__option">
+                                                <input type="checkbox" id="discount">
+                                                <label class="catalog__filter-title" for="discount" >Объявление не активно</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                               
+                                <div class="flex-offer-col jus-con-sb">
+                                    <div class="discounts__price flex-offer gap-15 no-wrap">
+                                        <div class="flex-offer-col gap-5">
+                                            <span class="discounts__cost">
+                                                28 000₽
+                                            </span>
+                                            <span class="discounts__old">
+                                                32 000₽
+                                            </span>
+                                        </div>
+                                        <span class="discounts__aed">
+                                            64.67 AED
+                                        </span>
+                                        <svg class="account__edit" xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none">
+                                            <path d="M11 18.833H19.25" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M15.125 3.70822C15.4897 3.34354 15.9843 3.13867 16.5 3.13867C16.7554 3.13867 17.0082 3.18897 17.2441 3.28669C17.4801 3.38441 17.6944 3.52765 17.875 3.70822C18.0556 3.88878 18.1988 4.10315 18.2965 4.33907C18.3942 4.57499 18.4445 4.82785 18.4445 5.08322C18.4445 5.33858 18.3942 5.59144 18.2965 5.82736C18.1988 6.06328 18.0556 6.27765 17.875 6.45822L6.41667 17.9165L2.75 18.8332L3.66667 15.1665L15.125 3.70822Z" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-offer-col gap-8 account__card-seller">
+                                        <a href="#" class="discounts__seller flex-offer al-it-cen gap-8">
+                                            <img src="img/icons/seller.webp" alt="Изображение продавца" class="discounts__seller-img">
+                                            <span class="discounts__seller-name">
+                                                oasis auto
+                                            </span>
+                                        </a>
+                                        <div class="flex-offer al-it-cen gap-8">
+                                            <div class="discounts__stars">
+                                                <div class="discounts__star fill"></div>
+                                                <div class="discounts__star fill"></div>
+                                                <div class="discounts__star fill"></div>
+                                                <div class="discounts__star fill"></div>
+                                                <div class="discounts__star half"></div>
+                                            </div>
+                                            <span class="discounts__stars-count">
+                                                232
+                                            </span>
+                                        </div>
+                                        
+                                    </div>
+                                    <span class="account__art">
+                                        арт: 678687
+                                    </span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="discounts__item flex-offer-col flex-1 jus-con-sb full">
+                            <div class="discounts__item-offer">
+                                <div class="flex-offer gap-20 no-wrap discounts__w70">
+                                    <svg class="discounts__like" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M20.8401 4.60987C20.3294 4.09888 19.7229 3.69352 19.0555 3.41696C18.388 3.14039 17.6726 2.99805 16.9501 2.99805C16.2276 2.99805 15.5122 3.14039 14.8448 3.41696C14.1773 3.69352 13.5709 4.09888 13.0601 4.60987L12.0001 5.66987L10.9401 4.60987C9.90843 3.57818 8.50915 2.99858 7.05012 2.99858C5.59109 2.99858 4.19181 3.57818 3.16012 4.60987C2.12843 5.64157 1.54883 7.04084 1.54883 8.49987C1.54883 9.95891 2.12843 11.3582 3.16012 12.3899L4.22012 13.4499L12.0001 21.2299L19.7801 13.4499L20.8401 12.3899C21.3511 11.8791 21.7565 11.2727 22.033 10.6052C22.3096 9.93777 22.4519 9.22236 22.4519 8.49987C22.4519 7.77739 22.3096 7.06198 22.033 6.39452C21.7565 5.72706 21.3511 5.12063 20.8401 4.60987Z" fill="white" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                      </svg>
+                                    <img src="img/main/thumbnail.webp" alt="Скидка 20%" class="discounts__img">
+                                    <div class="discounts__full-descr">
+                                        <h4 class="discounts__full-title">
+                                            Набор тормозных дисков GigaTormoz Pro Super Ti Ultimate
+                                        </h4>
+                                        <p class="discounts__full-descr">
+                                            Описание товара желательно распологать в 2-3 строчки, иначе это может создать много “шума”
+                                        </p>
+                                        <div class="discounts__full-attributes">
+                                            <div class="flex-offer gap-15">
+                                                <span class="discounts__full-attribute">
+                                                    Характеристика: 
+                                                </span>
+                                                <span class="discounts__full-value">
+                                                    Значение
+                                                </span>
+                                            </div>
+                                            <div class="flex-offer gap-15">
+                                                <span class="discounts__full-attribute">
+                                                    Характеристика: 
+                                                </span>
+                                                <span class="discounts__full-value">
+                                                    Значение
+                                                </span>
+                                            </div>
+                                            <div class="flex-offer gap-15">
+                                                <span class="discounts__full-attribute">
+                                                    Характеристика: 
+                                                </span>
+                                                <span class="discounts__full-value">
+                                                    Значение
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="toggle-options ">
+                                            <div class="toggle-option account__option">
+                                                <input type="checkbox" id="discount" checked="checked">
+                                                <label class="catalog__filter-title" for="discount" >Объявление активно</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                               
+                                <div class="flex-offer-col jus-con-sb">
+                                    <div class="discounts__price flex-offer gap-15 no-wrap">
+                                        <div class="flex-offer-col gap-5">
+                                            <span class="discounts__cost">
+                                                28 000₽
+                                            </span>
+                                            <span class="discounts__old">
+                                                32 000₽
+                                            </span>
+                                        </div>
+                                        <span class="discounts__aed">
+                                            64.67 AED
+                                        </span>
+                                        <svg class="account__edit" xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none">
+                                            <path d="M11 18.833H19.25" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M15.125 3.70822C15.4897 3.34354 15.9843 3.13867 16.5 3.13867C16.7554 3.13867 17.0082 3.18897 17.2441 3.28669C17.4801 3.38441 17.6944 3.52765 17.875 3.70822C18.0556 3.88878 18.1988 4.10315 18.2965 4.33907C18.3942 4.57499 18.4445 4.82785 18.4445 5.08322C18.4445 5.33858 18.3942 5.59144 18.2965 5.82736C18.1988 6.06328 18.0556 6.27765 17.875 6.45822L6.41667 17.9165L2.75 18.8332L3.66667 15.1665L15.125 3.70822Z" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-offer-col gap-8 account__card-seller">
+                                        <a href="#" class="discounts__seller flex-offer al-it-cen gap-8">
+                                            <img src="img/icons/seller.webp" alt="Изображение продавца" class="discounts__seller-img">
+                                            <span class="discounts__seller-name">
+                                                oasis auto
+                                            </span>
+                                        </a>
+                                        <div class="flex-offer al-it-cen gap-8">
+                                            <div class="discounts__stars">
+                                                <div class="discounts__star fill"></div>
+                                                <div class="discounts__star fill"></div>
+                                                <div class="discounts__star fill"></div>
+                                                <div class="discounts__star fill"></div>
+                                                <div class="discounts__star half"></div>
+                                            </div>
+                                            <span class="discounts__stars-count">
+                                                232
+                                            </span>
+                                        </div>
+                                        
+                                    </div>
+                                    <span class="account__art">
+                                        арт: 678687
+                                    </span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="account__reviews" data-active="reviews">
                         <h1 class="account__title">
                             Мои отзывы
                         </h1>
