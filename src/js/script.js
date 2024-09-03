@@ -913,8 +913,13 @@ checkAndActivateSelectors();
         });
     }
     
+    const closeWarning = document.querySelector('.close-warning');
 
-    
+    if (closeWarning) {
+        closeWarning.addEventListener('click', function() {
+            document.querySelector('.account__warning').style.display = 'none';
+        });
+    }
     
 });
 
