@@ -954,7 +954,8 @@ checkAndActivateSelectors();
 
     // Получаем все колонки внутри секции с классом account__new-catalog
     const newCatalogSection = document.querySelector('.account__new-catalog');
-    const newColumns = newCatalogSection.querySelectorAll('.overlay-catalog-col');
+    const newColumns = document.querySelectorAll('.account__new-catalog .overlay-catalog-col');
+    
 
     // Функция для инициализации состояния колонок
     function initializeNewCatalog() {
@@ -1002,5 +1003,55 @@ checkAndActivateSelectors();
         initializeNewCatalog();
         handleNewCatalogClick();
     }
+
+
+    // Placing
+
+    const houseCheckbox = document.getElementById('house');
+    const houseElement = document.querySelector('.placing__house');
+    const houseTrueElement = document.querySelector('.placing__house-true');
+
+    // Функция для обновления классов "active" у placing__house и placing__house-true
+    function updateHouseClasses() {
+        if (houseCheckbox.checked) {
+            houseTrueElement.classList.add('active');
+            houseElement.classList.remove('active');
+        } else {
+            houseTrueElement.classList.remove('active');
+            houseElement.classList.add('active');
+        }
+    }
+
+    // Обновляем классы при загрузке страницы
+    updateHouseClasses();
+
+    // Обработчик события изменения состояния чекбокса
+    if(houseCheckbox) {
+        houseCheckbox.addEventListener('change', updateHouseClasses);
+    }
+    
+    labelCard = document.querySelectorAll('.placing__card');
+
+    if(labelCard) {
+        labelCard.forEach((label) => {
+            label.addEventListener('click', () => {
+                const radio = label.querySelector('input[type="radio"]');
+                // Убираем класс active у всех <label>
+                document.querySelectorAll('.placing__card').forEach((l) => {
+                    l.classList.remove('active');
+                });
+                // Убираем выбор у всех <input>
+                document.querySelectorAll('.placing__paying-radio').forEach((r) => {
+                    r.checked = false;
+                });
+                // Устанавливаем активным текущий <input> и <label>
+                radio.checked = true;
+                label.classList.add('active');
+            });
+        });
+    }
+    
+    
+
 });
 

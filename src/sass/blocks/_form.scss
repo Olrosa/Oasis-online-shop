@@ -271,6 +271,10 @@
     line-height: 125%; /* 20px */
     border-radius: 3px;
     background: #EEE7D2;
+    transition: .2s all;
+    &:hover {
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+    }
     &.disactive {
         background: #F8F8F8;
         color: #D1D1D1;
