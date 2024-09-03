@@ -43,6 +43,8 @@
             cursor: not-allowed; /* Указатель для неактивного состояния */
             pointer-events: none; /* Отключаем взаимодействие */
         }
+
+        
     }
 
     &__reset {
@@ -272,6 +274,11 @@
     &.disactive {
         background: #F8F8F8;
         color: #D1D1D1;
+    }
+    &.white {
+        border: 1px solid var(--300, #E6E7E9);
+        color: #211A00;
+        background: #fff;
     }
 }
 

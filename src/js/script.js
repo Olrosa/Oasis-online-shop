@@ -451,11 +451,14 @@ checkAndActivateSelectors();
     
 
 
-    // OVERLAY | POOP UP's
+    // OVERLAY | MODAL POP-UPs
 
     // Открытие модального окна
     document.querySelectorAll('.open-modal').forEach(function (modalTrigger) {
         modalTrigger.addEventListener('click', function () {
+            // Закрываем все модальные окна перед открытием нового
+            closeAllModals();
+
             const modalName = this.getAttribute('data-modal');
             const overlay = document.querySelector(`.overlay[data-modal="${modalName}"]`);
             if (overlay) {
@@ -920,6 +923,84 @@ checkAndActivateSelectors();
             document.querySelector('.account__warning').style.display = 'none';
         });
     }
+
+    // Получаем все элементы с классом discounts__item
+    const discountItemsAcc = document.querySelectorAll('.account__articles .discounts__item');
+
+    if(discountItemsAcc) {
+        discountItemsAcc.forEach(item => {
+            // Находим input внутри account__option
+            const input = item.querySelector('.account__option input');
     
+            // Проверяем, активен ли input
+            input.addEventListener('change', function() {
+                if (!input.checked) {
+                    // Добавляем класс disactive, если input неактивен
+                    item.classList.add('disactive');
+                } else {
+                    // Убираем класс disactive, если input активен
+                    item.classList.remove('disactive');
+                }
+            });
+    
+            // Изначальная проверка состояния input
+            if (!input.checked) {
+                item.classList.add('disactive');
+            }
+        });
+    }
+
+    // Catalog Account Page
+
+    // Получаем все колонки внутри секции с классом account__new-catalog
+    const newCatalogSection = document.querySelector('.account__new-catalog');
+    const newColumns = newCatalogSection.querySelectorAll('.overlay-catalog-col');
+
+    // Функция для инициализации состояния колонок
+    function initializeNewCatalog() {
+        // Устанавливаем первую колонку как активную
+        newColumns[0].classList.add('active');
+        
+        // Остальные колонки делаем некликабельными изначально
+        for (let i = 1; i < newColumns.length; i++) {
+            newColumns[i].classList.remove('active');
+            newColumns[i].classList.add('disabled');
+        }
+    }
+
+    // Функция для обработки кликов и обновления состояния колонок
+    function handleNewCatalogClick() {
+        newColumns.forEach((col, colIndex) => {
+            // Получаем все элементы внутри колонки
+            const items = col.querySelectorAll('.overlay-catalog-item');
+
+            items.forEach((item) => {
+                item.addEventListener('click', () => {
+                    // Условие для первой колонки: всегда можно выбирать
+                    if (colIndex === 0 || newColumns[colIndex - 1].querySelector('.overlay-catalog-item.active')) {
+                        // Удаляем класс active у всех элементов в текущей колонке
+                        items.forEach((el) => el.classList.remove('active'));
+                        // Добавляем класс active к текущему элементу
+                        item.classList.add('active');
+
+                        // Убираем класс active и добавляем класс choosed к текущей колонке
+                        col.classList.remove('active');
+                        col.classList.add('choosed');
+
+                        // Делаем следующую колонку активной и убираем класс disabled
+                        if (colIndex < newColumns.length - 1) {
+                            newColumns[colIndex + 1].classList.remove('disabled');
+                            newColumns[colIndex + 1].classList.add('active');
+                        }
+                    }
+                });
+            });
+        });
+    }
+
+    if (newCatalogSection) {
+        initializeNewCatalog();
+        handleNewCatalogClick();
+    }
 });
 

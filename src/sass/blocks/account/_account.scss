@@ -51,6 +51,89 @@
             display: flex;
         }
     }
+    &__edit {
+        display: none;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+        padding: 24px;
+        border-radius: 3px;
+        border: 1px solid var(--200, #EDEEF2);
+        background: var(--0, #FFF);
+        box-shadow: 0px 4px 42px 0px rgba(0, 0, 0, 0.05);
+        &.active {
+            display: flex;
+        }
+        &-title {
+            color: var(--1000, #211A00);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 125%; /* 30px */
+        }
+        &-path {
+            color: var(--650, #848589);
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 125%; /* 17.5px */
+        }
+        &-form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        &-area {
+            height: 128px;
+            max-width: 436px;
+            &.full {
+                height: 480px;
+            }
+        }
+        &-descr {
+            color: #000;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 125%; /* 20px */
+        }
+        &-photo {
+            display: flex;
+            gap: 24px;
+        }
+        &-submit {
+            max-width: 260px;
+        }
+        &-img {
+            width: 25%;
+            height: 132px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        &-2 {
+            gap: 16px;
+            input {
+                width: 50%;
+            }
+        }
+        input {
+            max-width: 436px;
+        }
+        &-btn {
+            padding: 6px 12px;
+            height: 32px;
+            min-width: 236px;
+            max-width: 330px;
+            &.white {
+                border: 1px solid var(--300, #E6E7E9);
+                color: #211A00;
+                background: #fff;
+            }
+        }
+    }
     &__articles {
         display: none;
         flex-direction: column;
@@ -69,6 +152,7 @@
             width: auto;
             min-width: 188px;
             height: 32px;
+            color: #44474C; 
         }
         .discounts__aed {
             align-self: flex-start;
@@ -102,9 +186,17 @@
         .discounts__item.disactive {
             opacity: .5;
             filter: grayscale(100%);
-            pointer-events: none;
             overflow: hidden;
         }
+    }
+    &__back {
+        color: var(--800, #44474C);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%; /* 20px */
+        cursor: pointer;
     }
     &__card-seller {
         display: flex;

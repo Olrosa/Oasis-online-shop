@@ -559,6 +559,52 @@
         </div>
     </div>
 
+    <div class="overlay" data-modal="delete">
+        <div class="overlay-content overlay-img">
+            <div class="overlay-close close-modal">
+                <svg class="overlay-close-btn" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M16.5 5.5L5.5 16.5" stroke="#848589" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5.5 5.5L16.5 16.5" stroke="#848589" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+                <!-- CONTENT -->
+            <div class="flex-offer-col gap-25">
+                <h4 class="overlay-img-title">
+                    Удалить это объявление?
+                </h4>
+                <div class="flex-offer gap-15 no-wrap">
+                    <button class="button">
+                        Отмена
+                    </button>
+                    <button class="button white open-modal" data-modal="deleted">
+                        Удалить
+                    </button>
+                </div>
+               
+           </div>
+        </div>
+    </div>
+    <div class="overlay" data-modal="deleted">
+        <div class="overlay-content overlay-img">
+            <div class="overlay-close close-modal">
+                <svg class="overlay-close-btn" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M16.5 5.5L5.5 16.5" stroke="#848589" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5.5 5.5L16.5 16.5" stroke="#848589" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+                <!-- CONTENT -->
+            <div class="flex-offer-col gap-25">
+                <h4 class="overlay-img-title">
+                    Объявление удалено
+                </h4>
+                <button class="button">
+                    Хорошо
+                </button>
+               
+           </div>
+        </div>
+    </div>
+
     <div class="overlay" data-modal="history">
         <div class="overlay-content overlay-history">
             <div class="overlay-close close-modal">
@@ -816,7 +862,7 @@
                             <path d="M5.25 5.25L15.75 15.75" stroke="#44474C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <div class="account__info" data-active="info">
+                    <div class="account__info active" data-active="info">
                         <h1 class="account__title">
                             Личная информация
                         </h1>
@@ -908,6 +954,15 @@
                             <button class="button account__button disactive">
                                 Применить изменения
                             </button>
+                            <div class="flex-offer-col gap-15">
+                                <span class="account__edit-descr">
+                                    Добавьте баннеры для вашего профиля (макс. 12 шт)
+                                </span>
+                                <div class="account__edit-photo">
+                                    <img src="img/seller/no_img.webp" alt="Изображение" class="account__edit-img">
+                                </div>
+                                
+                            </div>
                         </form>
                     </div>
                     
@@ -973,12 +1028,12 @@
                             Показать еще
                         </button>
                     </div>
-                    <div class="account__articles active" data-active="articles">  
+                    <div class="account__articles " data-active="articles">  
                         <div class="flex-offer jus-con-sb no-wrap">
                             <h1 class="account__title">
                                 Мои объявления
                             </h1>
-                            <button class="button account__add">
+                            <button class="button account__add text__nav-subtitle" data-active="add">
                                 Разместить
                             </button>
                         </div>
@@ -1045,7 +1100,7 @@
                                         <span class="discounts__aed">
                                             64.67 AED
                                         </span>
-                                        <svg class="account__edit" xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none">
+                                        <svg class="account__edit-icon text__nav-subtitle" data-active="edit" xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none">
                                             <path d="M11 18.833H19.25" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
                                             <path d="M15.125 3.70822C15.4897 3.34354 15.9843 3.13867 16.5 3.13867C16.7554 3.13867 17.0082 3.18897 17.2441 3.28669C17.4801 3.38441 17.6944 3.52765 17.875 3.70822C18.0556 3.88878 18.1988 4.10315 18.2965 4.33907C18.3942 4.57499 18.4445 4.82785 18.4445 5.08322C18.4445 5.33858 18.3942 5.59144 18.2965 5.82736C18.1988 6.06328 18.0556 6.27765 17.875 6.45822L6.41667 17.9165L2.75 18.8332L3.66667 15.1665L15.125 3.70822Z" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
@@ -1141,7 +1196,7 @@
                                         <span class="discounts__aed">
                                             64.67 AED
                                         </span>
-                                        <svg class="account__edit" xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none">
+                                        <svg class="account__edit-icon text__nav-subtitle" data-active="edit" xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none">
                                             <path d="M11 18.833H19.25" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
                                             <path d="M15.125 3.70822C15.4897 3.34354 15.9843 3.13867 16.5 3.13867C16.7554 3.13867 17.0082 3.18897 17.2441 3.28669C17.4801 3.38441 17.6944 3.52765 17.875 3.70822C18.0556 3.88878 18.1988 4.10315 18.2965 4.33907C18.3942 4.57499 18.4445 4.82785 18.4445 5.08322C18.4445 5.33858 18.3942 5.59144 18.2965 5.82736C18.1988 6.06328 18.0556 6.27765 17.875 6.45822L6.41667 17.9165L2.75 18.8332L3.66667 15.1665L15.125 3.70822Z" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
@@ -1237,7 +1292,7 @@
                                         <span class="discounts__aed">
                                             64.67 AED
                                         </span>
-                                        <svg class="account__edit" xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none">
+                                        <svg class="account__edit-icon text__nav-subtitle" data-active="edit" xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none">
                                             <path d="M11 18.833H19.25" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
                                             <path d="M15.125 3.70822C15.4897 3.34354 15.9843 3.13867 16.5 3.13867C16.7554 3.13867 17.0082 3.18897 17.2441 3.28669C17.4801 3.38441 17.6944 3.52765 17.875 3.70822C18.0556 3.88878 18.1988 4.10315 18.2965 4.33907C18.3942 4.57499 18.4445 4.82785 18.4445 5.08322C18.4445 5.33858 18.3942 5.59144 18.2965 5.82736C18.1988 6.06328 18.0556 6.27765 17.875 6.45822L6.41667 17.9165L2.75 18.8332L3.66667 15.1665L15.125 3.70822Z" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
@@ -1270,7 +1325,9 @@
                             </div>
                             
                         </div>
+                        <button class="account__more">Показать еще</button>
                     </div>
+
                     <div class="account__reviews" data-active="reviews">
                         <h1 class="account__title">
                             Мои отзывы
@@ -1470,6 +1527,579 @@
                             </button>
                         </div>
                     </div>
+                    <div class="account__edit" data-active="edit">
+                        <div class="account__back text__nav-subtitle flex-offer gap-8 al-it-cen" data-active="articles">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                <path d="M13.75 5.5L8.25 11L13.75 16.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Назад</span>
+                        </div>
+                        <div class="flex-offer-col gap-8">
+                            <div class="account__edit-title">
+                                Редактировать
+                            </div>
+                            <div class="flex-offer gap-8 al-it-cen">
+                                <span class="accout__edit-path">
+                                    Детали
+                                </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                    <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#D1D1D1" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+                                <span class="accout__edit-path">
+                                    Шина
+                                </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                    <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#D1D1D1" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+                                <span class="accout__edit-path">
+                                    Размер
+                                </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                    <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#D1D1D1" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+                                <span class="accout__edit-path">
+                                    Специфика
+                                </span>
+                            </div>
+                            
+                        </div>
+
+                        <form class="form account__edit-form">
+                            <input type="text" class="form__input account__input" placeholder="Название" id="product_name">
+                            <input type="text" class="form__input account__input" placeholder="Цена в RUB" id="product_rub">
+                            <input type="text" class="form__input account__input" placeholder="Цена в AED " id="product_aed">
+                            <div class="flex-offer gap-10 al-it-cen no-wrap">
+                                <input type="checkbox" id="policy">
+                                <label for="promo" class="checkbox-descr">Скидка</label>
+                            </div>
+                            <textarea class="form__input account__edit-area" placeholder="Описание не полное (3 строчки)" id="text"></textarea>
+                            <div class="flex-offer-col gap-8">
+                                <div class="account__edit-2 flex-offer jus-con-sb">
+                                    <input type="text" class="form__input account__input" placeholder="Характеристика 1" id="product_rub">
+                                    <input type="text" class="form__input account__input" placeholder="Значение" id="product_aed">
+                                </div>
+                                <div class="flex-offer jus-con-sb no-wrap">
+                                    <button class="button account__edit-btn">
+                                        Добавить характеристику
+                                    </button>
+                                    <button class="button account__edit-btn white">
+                                        Добавить описание к характеристике
+                                    </button>
+                                </div>
+                            </div>
+                            <textarea class="form__input account__edit-area full" placeholder="Полное описание товара" id="text"></textarea>
+                            <div class="account__sex">
+                                <span class="account__descr">
+                                    Состояние
+                                </span>
+                                <div class="flex-offer gap-8">
+                                    <label class="radio-label">
+                                        <input type="radio" name="old" value="female" class="radio-input">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Б\у</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="new" value="male" class="radio-input">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Новая</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="flex-offer gap-10 al-it-cen no-wrap">
+                                <input type="checkbox" id="policy">
+                                <label for="promo" class="checkbox-descr">Авиа доставка</label>
+                            </div>
+                            <div class="flex-offer gap-10 al-it-cen no-wrap">
+                                <input type="checkbox" id="policy">
+                                <label for="promo" class="checkbox-descr">Доставка морем</label>
+                            </div>
+                            <div class="flex-offer-col gap-15">
+                                <span class="account__edit-descr">
+                                    Добавьте фото (макс. 10 шт)
+                                </span>
+                                <div class="account__edit-photo">
+                                    <img src="img/seller/no_img.webp" alt="Изображение" class="account__edit-img">
+                                    <img src="img/seller/no_img.webp" alt="Изображение" class="account__edit-img">
+                                    <img src="img/seller/no_img.webp" alt="Изображение" class="account__edit-img">
+                                    <img src="img/seller/no_img.webp" alt="Изображение" class="account__edit-img">
+                                </div>
+                                
+                            </div>
+                            <div class="flex-offer jus-con-sb">
+                                <button class="button account__edit-submit">Разместить объявление</button>
+                                <span class="button account__edit-btn white open-modal" data-modal="delete">
+                                    Удалить объявление
+                                </span>
+                            </div>
+                        </form>
+                        
+                    </div>
+                    <div class="account__edit" data-active="add">
+                        <div class="account__back text__nav-subtitle flex-offer gap-8 al-it-cen" data-active="articles">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                <path d="M13.75 5.5L8.25 11L13.75 16.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Назад</span>
+                        </div>
+                        <div class="flex-offer-col gap-8">
+                            <div class="account__edit-title">
+                                Новое объявление
+                            </div>
+                            <div class="flex-offer gap-8 al-it-cen">
+                                <span class="accout__edit-path">
+                                    Детали
+                                </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                    <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#D1D1D1" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+                                <span class="accout__edit-path">
+                                    Шина
+                                </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                    <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#D1D1D1" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+                                <span class="accout__edit-path">
+                                    Размер
+                                </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                    <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#D1D1D1" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+                                <span class="accout__edit-path">
+                                    Специфика
+                                </span>
+                            </div>
+                            
+                        </div>
+
+                        <form class="form account__edit-form">
+                            <input type="text" class="form__input account__input" placeholder="Название" id="product_name">
+                            <input type="text" class="form__input account__input" placeholder="Цена в RUB" id="product_rub">
+                            <input type="text" class="form__input account__input" placeholder="Цена в AED " id="product_aed">
+                            <div class="flex-offer gap-10 al-it-cen no-wrap">
+                                <input type="checkbox" id="policy">
+                                <label for="promo" class="checkbox-descr">Скидка</label>
+                            </div>
+                            <textarea class="form__input account__edit-area" placeholder="Описание не полное (3 строчки)" id="text"></textarea>
+                            <div class="flex-offer-col gap-8">
+                                <div class="account__edit-2 flex-offer jus-con-sb">
+                                    <input type="text" class="form__input account__input" placeholder="Характеристика 1" id="product_rub">
+                                    <input type="text" class="form__input account__input" placeholder="Значение" id="product_aed">
+                                </div>
+                                <div class="flex-offer jus-con-sb no-wrap">
+                                    <button class="button account__edit-btn">
+                                        Добавить характеристику
+                                    </button>
+                                    <button class="button account__edit-btn white">
+                                        Добавить описание к характеристике
+                                    </button>
+                                </div>
+                            </div>
+                            <textarea class="form__input account__edit-area full" placeholder="Полное описание товара" id="text"></textarea>
+                            <div class="account__sex">
+                                <span class="account__descr">
+                                    Состояние
+                                </span>
+                                <div class="flex-offer gap-8">
+                                    <label class="radio-label">
+                                        <input type="radio" name="old" value="female" class="radio-input">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Б\у</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="new" value="male" class="radio-input">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Новая</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="flex-offer gap-10 al-it-cen no-wrap">
+                                <input type="checkbox" id="policy">
+                                <label for="promo" class="checkbox-descr">Авиа доставка</label>
+                            </div>
+                            <div class="flex-offer gap-10 al-it-cen no-wrap">
+                                <input type="checkbox" id="policy">
+                                <label for="promo" class="checkbox-descr">Доставка морем</label>
+                            </div>
+                            <div class="flex-offer-col gap-15">
+                                <span class="account__edit-descr">
+                                    Добавьте фото (макс. 10 шт)
+                                </span>
+                                <div class="account__edit-photo">
+                                    <img src="img/seller/no_img.webp" alt="Изображение" class="account__edit-img">
+                                    <img src="img/seller/no_img.webp" alt="Изображение" class="account__edit-img">
+                                    <img src="img/seller/no_img.webp" alt="Изображение" class="account__edit-img">
+                                    <img src="img/seller/no_img.webp" alt="Изображение" class="account__edit-img">
+                                </div>
+                                
+                            </div>
+                            <button class="button account__edit-submit">Разместить объявление</button>
+                        </form>
+                        
+                    </div>
+
+                    <div class="account__edit account__new " data-active="new">
+                        <div class="overlay-catalog-offer flex-offer gap-20 account__new-catalog">
+                            <div class="overlay-catalog-col img active">
+                                <div class="overlay-catalog-item ">
+                                    <div class="flex-offer gap-10 jus-con-cen al-it-cen">
+                                        <img src="img/icons/category.webp" alt="Категория" class="overlay-catalog-img">
+                                        <span class="overlay-catalog-title">
+                                            Категория
+                                        </span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <div class="flex-offer gap-10 jus-con-cen al-it-cen">
+                                        <img src="img/icons/category.webp" alt="Категория" class="overlay-catalog-img">
+                                        <span class="overlay-catalog-title">
+                                            Категория
+                                        </span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <div class="flex-offer gap-10 jus-con-cen al-it-cen">
+                                        <img src="img/icons/category.webp" alt="Категория" class="overlay-catalog-img">
+                                        <span class="overlay-catalog-title">
+                                            Категория
+                                        </span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <div class="flex-offer gap-10 jus-con-cen al-it-cen">
+                                        <img src="img/icons/category.webp" alt="Категория" class="overlay-catalog-img">
+                                        <span class="overlay-catalog-title">
+                                            Категория
+                                        </span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <div class="flex-offer gap-10 jus-con-cen al-it-cen">
+                                        <img src="img/icons/category.webp" alt="Категория" class="overlay-catalog-img">
+                                        <span class="overlay-catalog-title">
+                                            Категория
+                                        </span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <div class="flex-offer gap-10 jus-con-cen al-it-cen">
+                                        <img src="img/icons/category.webp" alt="Категория" class="overlay-catalog-img">
+                                        <span class="overlay-catalog-title">
+                                            Категория
+                                        </span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <div class="flex-offer gap-10 jus-con-cen al-it-cen">
+                                        <img src="img/icons/category.webp" alt="Категория" class="overlay-catalog-img">
+                                        <span class="overlay-catalog-title">
+                                            Категория
+                                        </span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <div class="flex-offer gap-10 jus-con-cen al-it-cen">
+                                        <img src="img/icons/category.webp" alt="Категория" class="overlay-catalog-img">
+                                        <span class="overlay-catalog-title">
+                                            Категория
+                                        </span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <div class="flex-offer gap-10 jus-con-cen al-it-cen">
+                                        <img src="img/icons/category.webp" alt="Категория" class="overlay-catalog-img">
+                                        <span class="overlay-catalog-title">
+                                            Категория
+                                        </span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <div class="flex-offer gap-10 jus-con-cen al-it-cen">
+                                        <img src="img/icons/category.webp" alt="Категория" class="overlay-catalog-img">
+                                        <span class="overlay-catalog-title">
+                                            Категория
+                                        </span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="overlay-catalog-col">
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="overlay-catalog-col">
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="overlay-catalog-col">
+                                <div class="overlay-catalog-item text__nav-subtitle" data-active="add">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item text__nav-subtitle" data-active="add">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item text__nav-subtitle" data-active="add">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item text__nav-subtitle" data-active="add">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item text__nav-subtitle" data-active="add">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item text__nav-subtitle" data-active="add">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item text__nav-subtitle" data-active="add">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item text__nav-subtitle" data-active="add">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item text__nav-subtitle" data-active="add">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="overlay-catalog-item text__nav-subtitle" data-active="add">
+                                    <span class="overlay-catalog-title">
+                                        Категория
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M8.25 16.5L13.75 11L8.25 5.5" stroke="#44474C" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="account__orders" data-active="reveiws-empty">
                         <h1 class="account__title">
                             Мои отзывы
